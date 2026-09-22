@@ -1,8 +1,16 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="شجرة عائلة تفاعلية لرواية «حديث الصباح والمساء» لنجيب محفوظ — ٩٦ شخصية في ستة أجيال وأربعة فروع.">
+<meta name="color-scheme" content="light dark">
 <title>شجرة حديث الصباح والمساء</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+</head>
+<body>
 <style>
   :root{
     --bg:#EDEDE7;
@@ -88,7 +96,7 @@
     position:relative;overflow:auto;background:var(--surface-2);direction:ltr;
     border:1px solid var(--line);border-radius:12px;
     height:min(72vh,720px);
-    -webkit-overflow-scrolling:touch;
+    -webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain;
   }
   .sizer{position:relative}
   .stage{position:absolute;top:0;left:0;transform-origin:top left}
@@ -147,8 +155,47 @@
   .fact dd{margin:0;color:var(--ink)}
   .fact a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);cursor:pointer}
   .close{
-    position:absolute;top:10px;inset-inline-start:12px;font:inherit;font-size:13px;cursor:pointer;
+    position:absolute;top:10px;inset-inline-end:12px;font:inherit;font-size:13px;cursor:pointer;
     background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink-2);padding:3px 10px;
+  }
+  @media (max-width:899px){
+    .wrap{padding-inline:12px;padding-block:14px 0}
+    .kicker{font-size:10.5px;letter-spacing:.12em;margin-bottom:6px}
+    header h1{font-size:clamp(24px,7.4vw,34px);margin-bottom:6px}
+    .lede{font-size:12.5px;line-height:1.55;max-width:none;
+          display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .toolbar{margin-block:12px 8px;gap:6px}
+    .search{flex:1 1 96px;min-width:0;max-width:none;padding:8px 10px;font-size:12.5px}
+    .chips{order:9;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:1px}
+    .chips::-webkit-scrollbar{display:none}
+    .chips .chip{flex:none}
+    .chip{font-size:12px;padding:5px 11px}
+    .zoom{margin-inline-start:0;gap:4px}
+    .zbtn{width:31px;height:31px;font-size:14px}
+    .zbtn.wide{font-size:0;width:31px;padding:0}
+    .zbtn.wide::after{content:"⤢";font-size:14px}
+    .canvas{border-radius:12px}
+    .band-label{font-size:9.5px;top:6px}
+    .card{padding:6px 9px 7px;border-radius:7px}
+    .card .nm{font-size:15px}
+    .card .rl,.card .sp{font-size:10px}
+    .panel{border-radius:14px 14px 0 0;max-height:46dvh;padding-top:20px;
+           box-shadow:0 -20px 50px rgba(0,0,0,.3)}
+    .panel::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);
+           width:38px;height:4px;border-radius:99px;background:var(--line)}
+    .close{top:16px}
+    .panel h2{font-size:21px;padding-inline-end:62px}
+    .panel p.bio{font-size:13px;max-width:none}
+    .facts{max-width:none}
+    footer{font-size:11px;padding-block:14px 26px}
+  }
+  @media (max-height:560px) and (max-width:1200px){
+    .wrap{padding-block:8px 0}
+    .lede{display:none}
+    header h1{font-size:22px;margin-bottom:2px}
+    .kicker{margin-bottom:3px}
+    .toolbar{margin-block:8px 6px}
+    footer{display:none}
   }
   @media (min-width:900px){
     .panel{
@@ -534,6 +581,7 @@ function open(id){
   row("الأبناء", ch.length?ch.join(" · "):"—");
   row("المسكن", p.wh);
   panel.hidden=false;
+  if(isPhone()) requestAnimationFrame(function(){ focusOn(id); });
 }
 document.getElementById("close").addEventListener("click",function(){
   panel.hidden=true; if(selected){ const el=cards.get(selected); if(el) el.classList.remove("sel"); } selected=null;
@@ -543,16 +591,58 @@ document.getElementById("close").addEventListener("click",function(){
 const canvas=document.getElementById("canvas");
 let zoom=1;
 const sizer=document.getElementById("sizer");
+const mqPhone=matchMedia("(max-width:899px)");
+const isPhone=function(){ return mqPhone.matches; };
+const PANEL_VH=0.46;   /* مطابق لـ max-height في CSS */
+const vpH=function(){ return window.visualViewport?window.visualViewport.height:window.innerHeight; };
 function applyZoom(){
   stage.style.transform="scale("+zoom+")";
   sizer.style.width=(totalW*zoom)+"px";
-  sizer.style.height=(totalH*zoom)+"px";
+  /* خلو أسفل الشجرة على الموبايل حتى يمكن رفع أي بطاقة فوق اللوحة المنزلقة */
+  const slack=isPhone()?Math.round(vpH()*PANEL_VH):0;
+  sizer.style.height=(totalH*zoom+slack)+"px";
+}
+/* ارتفاع اللوحة: على الموبايل نملأ ما تبقّى من الشاشة */
+function fitHeight(){
+  if(!isPhone()){ canvas.style.height=""; return; }
+  const top=canvas.getBoundingClientRect().top, vh=vpH();
+  const minH=Math.min(300,Math.round(vh*0.45));
+  canvas.style.height=Math.max(minH,Math.round(vh-top-10))+"px";
+}
+function viewH(){
+  const r=canvas.getBoundingClientRect();
+  if(isPhone() && !panel.hidden){
+    return Math.max(140, Math.min(r.bottom, vpH()*(1-PANEL_VH)) - r.top);
+  }
+  return canvas.clientHeight;
 }
 function focusOn(id){
   const el=cards.get(id); if(!el) return;
   const cx=(X(id)+NW/2)*zoom, cy=(Y(id)+NH/2)*zoom;
-  canvas.scrollTo({left:cx-canvas.clientWidth/2,top:cy-canvas.clientHeight/2,behavior:"smooth"});
+  canvas.scrollTo({left:cx-canvas.clientWidth/2,top:cy-viewH()/2,behavior:"smooth"});
 }
+function zoomAt(nz,clientX,clientY){
+  nz=Math.max(0.2,Math.min(1.7,nz));
+  const r=canvas.getBoundingClientRect();
+  const ox=(clientX==null?canvas.clientWidth/2:clientX-r.left);
+  const oy=(clientY==null?viewH()/2:clientY-r.top);
+  const px=canvas.scrollLeft+ox, py=canvas.scrollTop+oy, k=nz/zoom;
+  zoom=nz; applyZoom();
+  canvas.scrollLeft=px*k-ox; canvas.scrollTop=py*k-oy;
+}
+/* قرصة الإصبعين */
+var pinch=null;
+function dist2(t){ return Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY); }
+canvas.addEventListener("touchstart",function(e){
+  if(e.touches.length===2){ var t=[e.touches[0],e.touches[1]];
+    pinch={d:dist2(t),z:zoom}; }
+},{passive:true});
+canvas.addEventListener("touchmove",function(e){
+  if(pinch&&e.touches.length===2){ e.preventDefault();
+    var t=[e.touches[0],e.touches[1]];
+    zoomAt(pinch.z*dist2(t)/pinch.d,(t[0].clientX+t[1].clientX)/2,(t[0].clientY+t[1].clientY)/2); }
+},{passive:false});
+["touchend","touchcancel"].forEach(function(ev){ canvas.addEventListener(ev,function(){ pinch=null; },{passive:true}); });
 
 /* البحث */
 document.getElementById("q").addEventListener("input",function(e){
@@ -586,20 +676,28 @@ Object.keys(LINES).forEach(function(key){
 });
 
 /* التكبير */
-document.getElementById("zin").addEventListener("click",function(){ zoom=Math.min(1.6,zoom+0.15); applyZoom(); });
-document.getElementById("zout").addEventListener("click",function(){ zoom=Math.max(0.24,zoom-0.12); applyZoom(); });
+document.getElementById("zin").addEventListener("click",function(){ zoomAt(zoom+0.15); });
+document.getElementById("zout").addEventListener("click",function(){ zoomAt(zoom-0.12); });
 document.getElementById("zfit").addEventListener("click",function(){
-  zoom=Math.max(0.24,Math.min(1,(canvas.clientWidth-8)/totalW)); applyZoom();
+  zoom=Math.max(0.2,Math.min(1,(canvas.clientWidth-8)/totalW)); applyZoom();
   canvas.scrollLeft=canvas.scrollWidth;
 });
-zoom=(canvas.clientWidth<700)?0.62:0.82;
+fitHeight();
+zoom=isPhone()?0.52:((canvas.clientWidth<700)?0.62:0.82);
 applyZoom();
 requestAnimationFrame(function(){
-  open("amr");
+  if(!isPhone()) open("amr");
   const cx=(X("amr")+NW/2)*zoom, cy=(Y("amr")+NH/2)*zoom;
   canvas.scrollLeft=Math.max(0,cx-canvas.clientWidth*0.62);
-  canvas.scrollTop=Math.max(0,cy-canvas.clientHeight*0.42);
+  canvas.scrollTop=Math.max(0,cy-viewH()*0.42);
 });
+var rsT; function onResize(){ clearTimeout(rsT); rsT=setTimeout(function(){ fitHeight(); applyZoom();
+  if(selected) focusOn(selected); },120); }
+addEventListener("resize",onResize); addEventListener("orientationchange",onResize);
+if(window.visualViewport) visualViewport.addEventListener("resize",onResize);
+mqPhone.addEventListener("change",function(){ fitHeight(); zoom=isPhone()?0.52:0.82; applyZoom();
+  if(selected) focusOn(selected); });
 </script>
 
-</body></html>
+</body>
+</html>
