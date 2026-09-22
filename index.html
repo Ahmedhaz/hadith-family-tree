@@ -3,700 +3,663 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="شجرة عائلة تفاعلية لرواية «حديث الصباح والمساء» لنجيب محفوظ — ٩٦ شخصية في ستة أجيال وأربعة فروع.">
-<meta name="color-scheme" content="light dark">
-<title>شجرة حديث الصباح والمساء</title>
+<meta name="description" content="كوكبة تفاعلية لشخصيات رواية «حديث الصباح والمساء» لنجيب محفوظ — ٩٦ شخصية، ستة أجيال، وأسماء من جسّدوها في مسلسل ٢٠٠١.">
+<meta name="color-scheme" content="dark">
+<title>كوكبة حديث الصباح والمساء</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Readex+Pro:wght@300;400;500;600&display=swap">
 </head>
 <body>
 <style>
-  :root{
-    --bg:#EDEDE7;
-    --surface:#FBFAF6;
-    --surface-2:#F3F2EC;
-    --ink:#191C21;
-    --ink-2:#4A5059;
-    --muted:#757C86;
-    --line:#D6D5CC;
-    --masri:#1C5C68;
-    --dawud:#3F6091;
-    --marakibi:#976413;
-    --qalyubi:#7A2E45;
-    --inlaw:#6E737C;
-    --dead:#B04A2F;
-    --shadow:0 1px 2px rgba(20,24,30,.08),0 8px 24px rgba(20,24,30,.06);
-    color-scheme:light;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#13161A; --surface:#1B1F25; --surface-2:#22272E;
-      --ink:#ECEAE4; --ink-2:#B9BEC6; --muted:#8C939D; --line:#2E343C;
-      --masri:#5FB3C0; --dawud:#8DAEDE; --marakibi:#D7A24A; --qalyubi:#D98099;
-      --inlaw:#98A0AA; --dead:#E58C6E;
-      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35);
-      color-scheme:dark;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#13161A; --surface:#1B1F25; --surface-2:#22272E;
-    --ink:#ECEAE4; --ink-2:#B9BEC6; --muted:#8C939D; --line:#2E343C;
-    --masri:#5FB3C0; --dawud:#8DAEDE; --marakibi:#D7A24A; --qalyubi:#D98099;
-    --inlaw:#98A0AA; --dead:#E58C6E;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35);
-    color-scheme:dark;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);
-    font-family:"IBM Plex Sans Arabic",system-ui,"Segoe UI",sans-serif;
-    direction:rtl;font-size:15px;line-height:1.65;
-  }
-  .wrap{padding-inline:16px;padding-block:28px 0;max-width:1400px;margin-inline:auto}
-  header h1{
-    font-family:Amiri,"Times New Roman",serif;font-weight:700;
-    font-size:clamp(28px,5vw,44px);line-height:1.2;margin:0 0 6px;text-wrap:balance;
-  }
-  .kicker{
-    font-size:12px;letter-spacing:.14em;color:var(--muted);
-    text-transform:uppercase;margin:0 0 10px;font-weight:600;
-  }
-  .lede{margin:0;max-width:62ch;color:var(--ink-2);font-size:15px}
-  .lede b{color:var(--ink);font-weight:600}
+:root{
+  --void:#080A0D; --deep:#0D1117; --panel:#141A22; --panel-2:#1B222C;
+  --edge:#263040; --ink:#F0EBE1; --ink-2:#B9C0CB; --mute:#7F8899;
+  --gold:#D4A843; --gold-soft:#8A6F2C;
+  --masri:#53B7C7; --dawud:#7FA3E0; --marakibi:#D79B45; --qalyubi:#D2788E;
+  --dead:#C96A4E;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--void);color:var(--ink);direction:rtl;
+  font-family:"Readex Pro",system-ui,sans-serif;font-size:14px;line-height:1.7;
+  overflow-x:hidden;
+}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(900px 620px at 78% 8%, rgba(212,168,67,.10), transparent 62%),
+    radial-gradient(760px 520px at 12% 88%, rgba(83,183,199,.08), transparent 60%),
+    radial-gradient(1200px 800px at 50% 50%, #0E141C 0%, #080A0D 78%);
+}
+.shell{position:relative;z-index:1;max-width:1500px;margin-inline:auto;padding-inline:16px;padding-block:26px 0}
 
-  .toolbar{
-    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
-    margin-block:22px 12px;
-  }
-  .search{
-    flex:1 1 200px;min-width:160px;max-width:280px;
-    background:var(--surface);border:1px solid var(--line);border-radius:8px;
-    padding:8px 12px;color:var(--ink);font:inherit;font-size:14px;
-  }
-  .search::placeholder{color:var(--muted)}
-  .chips{display:flex;flex-wrap:wrap;gap:6px}
-  .chip{
-    font:inherit;font-size:13px;font-weight:500;cursor:pointer;
-    background:var(--surface);border:1px solid var(--line);color:var(--ink-2);
-    border-radius:99px;padding:5px 12px;display:inline-flex;align-items:center;gap:6px;
-  }
-  .chip .dot{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
-  .chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
-  .chip:focus-visible,.zbtn:focus-visible,.search:focus-visible,.card:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-  .zoom{display:flex;gap:4px;margin-inline-start:auto}
-  .zbtn{
-    font:inherit;font-size:15px;cursor:pointer;width:34px;height:34px;
-    background:var(--surface);border:1px solid var(--line);border-radius:8px;color:var(--ink-2);
-    display:grid;place-items:center;
-  }
-  .zbtn.wide{width:auto;padding-inline:12px;font-size:13px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 26px;margin-bottom:18px}
+.brand{min-width:min(100%,430px)}
+.eyebrow{margin:0 0 8px;font-size:10.5px;letter-spacing:.26em;color:var(--gold);font-weight:500}
+h1{font-family:Amiri,serif;font-weight:700;font-size:clamp(30px,5.4vw,52px);line-height:1.1;margin:0 0 8px;
+   background:linear-gradient(180deg,#FBF6EA 30%,#C6B48A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:0;color:var(--ink-2);font-size:14px;max-width:56ch;font-weight:300}
+.stats{display:flex;gap:22px;margin-inline-start:auto;flex-wrap:wrap}
+.stat b{display:block;font-family:Amiri,serif;font-size:26px;line-height:1;color:var(--gold)}
+.stat span{font-size:10.5px;color:var(--mute);letter-spacing:.1em}
 
-  .canvas{
-    position:relative;overflow:auto;background:var(--surface-2);direction:ltr;
-    border:1px solid var(--line);border-radius:12px;
-    height:min(72vh,720px);
-    -webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain;
-  }
-  .sizer{position:relative}
-  .stage{position:absolute;top:0;left:0;transform-origin:top left}
-  .band{position:absolute;inset-inline:0;border-top:1px dashed var(--line)}
-  .band:nth-child(even){background:color-mix(in srgb,var(--surface) 55%,transparent)}
-  .band-label{
-    position:absolute;top:8px;right:14px;font-size:11px;font-weight:600;
-    letter-spacing:.08em;color:var(--muted);white-space:nowrap;
-  }
-  svg.links{position:absolute;inset:0;overflow:visible;pointer-events:none}
-  .link{fill:none;stroke:var(--line);stroke-width:1.5}
-  .marr{fill:none;stroke:var(--inlaw);stroke-width:1.5;stroke-dasharray:2 4;opacity:.75}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.field{position:relative;flex:1 1 190px;max-width:260px}
+.field input{
+  width:100%;background:rgba(20,26,34,.8);border:1px solid var(--edge);border-radius:10px;
+  padding:9px 34px 9px 12px;color:var(--ink);font:inherit;font-size:13px;
+}
+.field input::placeholder{color:var(--mute)}
+.field::after{content:"⌕";position:absolute;inset-inline-end:11px;top:7px;color:var(--mute);font-size:15px}
+.chip{
+  font:inherit;font-size:12.5px;font-weight:400;cursor:pointer;color:var(--ink-2);
+  background:rgba(20,26,34,.75);border:1px solid var(--edge);border-radius:99px;
+  padding:6px 13px;display:inline-flex;align-items:center;gap:7px;transition:.15s;
+}
+.chip:hover{border-color:var(--gold-soft);color:var(--ink)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c,var(--mute));display:block;box-shadow:0 0 8px var(--c,transparent)}
+.chip[aria-pressed="true"]{background:var(--c,var(--gold));border-color:transparent;color:#0A0D12;font-weight:500}
+.chip[aria-pressed="true"] i{background:#0A0D12;box-shadow:none}
+.spacer{margin-inline-start:auto;display:flex;gap:6px}
+.icon{width:34px;height:34px;display:grid;place-items:center;font-size:15px;padding:0}
+button:focus-visible,input:focus-visible,.node:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
-  .card{
-    position:absolute;direction:rtl;text-align:start;cursor:pointer;font:inherit;
-    background:var(--surface);border:1px solid var(--line);
-    border-inline-end:3px solid var(--l,var(--inlaw));
-    border-radius:8px;padding:7px 10px 8px;box-shadow:var(--shadow);
-    transition:transform .12s ease,opacity .12s ease;
-  }
-  .card:hover{transform:translateY(-2px)}
-  .card .nm{
-    font-family:Amiri,serif;font-weight:700;font-size:16px;line-height:1.25;color:var(--ink);
-    display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-  }
-  .card .rl{
-    display:block;font-size:11px;color:var(--muted);line-height:1.35;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;
-  }
-  .card .sp{
-    display:block;font-size:11px;color:var(--l,var(--inlaw));font-weight:500;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-  }
-  .card.dim{opacity:.22}
-  .card.sel{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink),var(--shadow)}
-  .card.hit{box-shadow:0 0 0 2px var(--marakibi),var(--shadow)}
-  .card .tag{
-    position:absolute;top:-6px;left:-4px;font-size:9px;font-weight:700;
-    background:var(--dead);color:#fff;border-radius:99px;padding:0 6px;line-height:15px;
-  }
+.stage-wrap{
+  position:relative;border:1px solid var(--edge);border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(13,17,23,.9),rgba(8,10,13,.95));
+  box-shadow:0 30px 80px -40px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.03);
+}
+.scroll{overflow:auto;height:min(70vh,660px);direction:ltr;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain}
+.sizer{position:relative}
+.stage{position:absolute;top:0;left:0;transform-origin:top left}
+.gen-band{position:absolute;left:0;right:0;border-top:1px solid rgba(255,255,255,.045)}
+.gen-name{position:absolute;top:10px;right:16px;font-size:10px;letter-spacing:.16em;color:#5D6675;white-space:nowrap;direction:rtl}
+.gen-year{position:absolute;top:10px;left:16px;font-size:10px;letter-spacing:.14em;color:#4E5666;font-variant-numeric:tabular-nums}
+svg.wires{position:absolute;inset:0;overflow:visible;pointer-events:none}
+.wire{fill:none;stroke:rgba(214,222,235,.10);stroke-width:1.1}
+.wire.lit{stroke:var(--gold);stroke-width:1.7;filter:drop-shadow(0 0 6px rgba(212,168,67,.55))}
+.wire.dimmed{stroke:rgba(214,222,235,.035)}
+.marry{fill:none;stroke:rgba(212,168,67,.36);stroke-width:1.2;stroke-dasharray:1 5;stroke-linecap:round}
+.marry.lit{stroke:var(--gold);stroke-dasharray:none;filter:drop-shadow(0 0 6px rgba(212,168,67,.5))}
+.trail{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-dasharray:6 7;filter:drop-shadow(0 0 9px rgba(212,168,67,.7));animation:march 1.1s linear infinite}
+@keyframes march{to{stroke-dashoffset:-26}}
 
-  .panel{
-    position:fixed;inset-inline:0;bottom:0;z-index:20;
-    background:var(--surface);border-top:1px solid var(--line);
-    box-shadow:0 -10px 30px rgba(0,0,0,.14);
-    padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));
-    max-height:62vh;overflow:auto;
-  }
-  .panel[hidden]{display:none!important}
-  .panel h2{font-family:Amiri,serif;font-size:24px;margin:0 0 2px;line-height:1.2}
-  .panel .meta{font-size:12px;color:var(--muted);margin:0 0 10px}
-  .panel p.bio{margin:0 0 12px;color:var(--ink-2);max-width:62ch}
-  .facts{display:grid;gap:8px;margin:0;max-width:62ch}
-  .fact{display:grid;grid-template-columns:72px 1fr;gap:10px;font-size:13.5px;align-items:baseline}
-  .fact dt{color:var(--muted);font-size:12px}
-  .fact dd{margin:0;color:var(--ink)}
-  .fact a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);cursor:pointer}
-  .close{
-    position:absolute;top:10px;inset-inline-end:12px;font:inherit;font-size:13px;cursor:pointer;
-    background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink-2);padding:3px 10px;
-  }
-  @media (max-width:899px){
-    .wrap{padding-inline:12px;padding-block:14px 0}
-    .kicker{font-size:10.5px;letter-spacing:.12em;margin-bottom:6px}
-    header h1{font-size:clamp(24px,7.4vw,34px);margin-bottom:6px}
-    .lede{font-size:12.5px;line-height:1.55;max-width:none;
-          display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-    .toolbar{margin-block:12px 8px;gap:6px}
-    .search{flex:1 1 96px;min-width:0;max-width:none;padding:8px 10px;font-size:12.5px}
-    .chips{order:9;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:1px}
-    .chips::-webkit-scrollbar{display:none}
-    .chips .chip{flex:none}
-    .chip{font-size:12px;padding:5px 11px}
-    .zoom{margin-inline-start:0;gap:4px}
-    .zbtn{width:31px;height:31px;font-size:14px}
-    .zbtn.wide{font-size:0;width:31px;padding:0}
-    .zbtn.wide::after{content:"⤢";font-size:14px}
-    .canvas{border-radius:12px}
-    .band-label{font-size:9.5px;top:6px}
-    .card{padding:6px 9px 7px;border-radius:7px}
-    .card .nm{font-size:15px}
-    .card .rl,.card .sp{font-size:10px}
-    .panel{border-radius:14px 14px 0 0;max-height:46dvh;padding-top:20px;
-           box-shadow:0 -20px 50px rgba(0,0,0,.3)}
-    .panel::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);
-           width:38px;height:4px;border-radius:99px;background:var(--line)}
-    .close{top:16px}
-    .panel h2{font-size:21px;padding-inline-end:62px}
-    .panel p.bio{font-size:13px;max-width:none}
-    .facts{max-width:none}
-    footer{font-size:11px;padding-block:14px 26px}
-  }
-  @media (max-height:560px) and (max-width:1200px){
-    .wrap{padding-block:8px 0}
-    .lede{display:none}
-    header h1{font-size:22px;margin-bottom:2px}
-    .kicker{margin-bottom:3px}
-    .toolbar{margin-block:8px 6px}
-    footer{display:none}
-  }
-  @media (min-width:900px){
-    .panel{
-      inset-inline:auto;left:24px;right:auto;bottom:24px;width:360px;
-      border:1px solid var(--line);border-radius:12px;max-height:56vh;
-    }
-  }
-  footer{padding-block:18px 32px;color:var(--muted);font-size:12.5px;max-width:70ch}
-  footer b{color:var(--ink-2);font-weight:600}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.node{
+  position:absolute;direction:rtl;cursor:pointer;font:inherit;text-align:start;
+  background:rgba(22,28,37,.92);border:1px solid var(--edge);border-radius:10px;
+  padding:7px 11px 8px 12px;display:flex;align-items:center;gap:8px;
+  transition:transform .18s cubic-bezier(.2,.8,.3,1),border-color .18s,box-shadow .18s,opacity .25s;
+  opacity:0;transform:translateY(10px) scale(.96);
+}
+.node.in{opacity:1;transform:none}
+.medal{flex:none;display:block;border-radius:50%}
+.node .txt{min-width:0;display:flex;flex-direction:column;gap:1px}
+.node .nm{font-family:Amiri,serif;font-weight:700;font-size:15.5px;line-height:1.15;color:#EDE7DB;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.node .cast{font-size:9.5px;line-height:1.3;color:#7C8494;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  display:flex;align-items:center;gap:4px}
+.node .cast b{font-weight:400;color:var(--gold);opacity:.85}
+.node .cast .dot{width:3px;height:3px;border-radius:50%;background:currentColor;flex:none;opacity:.6}
+.node .gn{font-size:9.5px;color:#68707E;margin-inline-start:2px}
+.node:hover{transform:translateY(-3px);border-color:var(--c);box-shadow:0 10px 26px -12px var(--c)}
+.node.lit{border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,168,67,.45),0 12px 30px -14px rgba(212,168,67,.7);background:rgba(32,28,20,.95)}
+.node.sel{border-color:var(--gold);background:linear-gradient(180deg,rgba(60,48,20,.95),rgba(30,26,18,.95));box-shadow:0 0 0 1px var(--gold),0 0 34px -8px rgba(212,168,67,.8)}
+.node.faded{opacity:.14;filter:saturate(.3)}
+.node.hidden-gen{opacity:.07;filter:saturate(0)}
+.node.pick{border-color:#7FE0C0;box-shadow:0 0 0 1px #7FE0C0,0 0 26px -8px #7FE0C0}
+.node .flag{position:absolute;top:-7px;inset-inline-start:-5px;width:7px;height:7px;border-radius:50%;background:var(--dead);box-shadow:0 0 8px var(--dead)}
+
+.tl{display:flex;align-items:center;gap:14px;padding:12px 16px;border-top:1px solid var(--edge);background:rgba(10,13,18,.75);flex-wrap:wrap}
+.tl label{font-size:11px;color:var(--mute);letter-spacing:.08em;white-space:nowrap}
+.tl input[type=range]{flex:1 1 220px;accent-color:var(--gold);min-width:160px}
+.tl .era{font-family:Amiri,serif;font-size:15px;color:var(--gold);min-width:min(100%,230px)}
+
+.dock{
+  position:fixed;z-index:30;inset-inline-start:0;inset-inline-end:0;bottom:0;
+  background:linear-gradient(180deg,rgba(18,23,31,.97),rgba(11,14,19,.99));
+  border-top:1px solid var(--edge);padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));
+  max-height:64vh;overflow:auto;backdrop-filter:blur(14px);
+}
+.dock[hidden]{display:none!important}
+.dock .hd{display:flex;align-items:center;gap:13px;margin-bottom:10px}
+.dock .hd .medal{box-shadow:0 8px 26px -12px rgba(0,0,0,.9)}
+.dock .hd .who{min-width:0}
+.dock h2{font-family:Amiri,serif;font-size:27px;margin:0 0 3px;line-height:1.15;color:#F3EEE3}
+.credit{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 13px;font-size:12.5px}
+.credit .k{font-size:10.5px;color:var(--mute);letter-spacing:.06em}
+.credit a{font-family:Amiri,serif;font-weight:700;font-size:15px;color:var(--gold);text-decoration:none;
+  border-bottom:1px dashed rgba(212,168,67,.45);padding-bottom:1px}
+.credit a:hover{border-bottom-style:solid}
+.dock .meta{margin:0;font-size:11.5px;color:var(--mute);letter-spacing:.04em}
+.dock .bio{margin:0 0 14px;color:var(--ink-2);font-size:13.5px;font-weight:300;max-width:66ch}
+.rel{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px;align-items:baseline}
+.rel-k{font-size:10.5px;color:var(--mute);min-width:52px;letter-spacing:.06em}
+.pill{
+  font:inherit;font-size:12.5px;cursor:pointer;background:rgba(32,40,52,.9);color:var(--ink-2);
+  border:1px solid var(--edge);border-radius:8px;padding:3px 10px;transition:.15s;font-family:Amiri,serif;font-weight:700;
+}
+.pill:hover{border-color:var(--gold);color:var(--ink)}
+.pill.ghost{font-family:"Readex Pro",sans-serif;font-weight:400;cursor:default;background:none;border-style:dashed}
+.dock .x{position:absolute;top:12px;inset-inline-end:14px;font:inherit;font-size:12px;cursor:pointer;
+  background:none;border:1px solid var(--edge);border-radius:8px;color:var(--ink-2);padding:3px 11px}
+.dock .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.acts .chip{font-size:12px}
+
+.path-box{margin-top:12px;border-top:1px dashed var(--edge);padding-top:11px}
+.path-line{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.path-line .nmx{font-family:Amiri,serif;font-weight:700;font-size:15px;color:#EFE8DA}
+.path-line .lnk{font-size:10.5px;color:var(--gold);letter-spacing:.06em}
+.hint{font-size:11.5px;color:var(--mute)}
+@media (max-width:919px){
+  .shell{padding-inline:12px;padding-block:13px 0}
+  header{gap:9px 14px;margin-bottom:11px}
+  .brand{min-width:100%}
+  .eyebrow{font-size:9.5px;letter-spacing:.2em;margin-bottom:5px}
+  h1{font-size:clamp(25px,8vw,36px);margin-bottom:5px}
+  .sub{font-size:12px;line-height:1.55;max-width:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .stats{width:100%;gap:6px 14px;margin-inline-start:0;flex-wrap:wrap;
+         border-top:1px solid rgba(255,255,255,.05);padding-top:8px;margin-top:2px}
+  .stat{display:flex;align-items:baseline;gap:5px}
+  .stat b{display:inline;font-size:16px}
+  .stat span{font-size:10px;letter-spacing:.04em;color:var(--mute)}
+  .bar{gap:6px;margin-bottom:8px}
+  .field{flex:1 1 96px;max-width:none}
+  #zfit{font-size:0;width:31px;height:31px;padding:0;display:grid;place-items:center}
+  #zfit::after{content:"⤢";font-size:14px;color:inherit}
+  #pathBtn{white-space:nowrap}
+  .field input{padding:8px 30px 8px 10px;font-size:12.5px}
+  .field::after{top:6px}
+  .chip{font-size:12px;padding:5px 11px}
+  .icon{width:31px;height:31px;font-size:14px}
+  .spacer{margin-inline-start:0}
+  #chips{order:9;width:100%;flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;padding-bottom:1px}
+  #chips::-webkit-scrollbar{display:none}
+  #chips .chip{flex:none}
+  .stage-wrap{border-radius:13px}
+  .gen-name,.gen-year{font-size:9px;top:7px}
+  .tl{padding:8px 12px;gap:7px 10px}
+  .tl label{font-size:10px}
+  .tl input[type=range]{flex:1 1 110px;min-width:100px}
+  .tl .era{font-size:12px;min-width:0;flex:1 1 100%;order:3;line-height:1.3}
+  .node{padding:6px 9px 7px 10px;border-radius:9px}
+  .node .nm{font-size:14.5px}
+  .dock{border-radius:16px 16px 0 0;max-height:46dvh;padding-top:21px;
+        box-shadow:0 -22px 60px -30px rgba(0,0,0,.95)}
+  .dock::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);
+        width:38px;height:4px;border-radius:99px;background:var(--edge)}
+  .dock .x{top:17px}
+  .dock h2{font-size:22px;padding-inline-end:64px}
+  .dock .meta{font-size:11px;margin-bottom:10px}
+  .dock .bio{font-size:12.5px}
+  .pill{font-size:12px;padding:3px 9px}
+  footer{font-size:10.5px;padding-block:14px 26px;line-height:1.6}
+}
+@media (max-height:560px) and (max-width:1200px){
+  .shell{padding-block:8px 0}
+  header{margin-bottom:7px;gap:6px 14px}
+  .eyebrow{margin-bottom:3px}
+  h1{font-size:23px;margin-bottom:2px}
+  .sub{display:none}
+  .stats{display:none}
+  .bar{margin-bottom:6px}
+  .tl{padding:6px 10px}
+  .tl .era{display:none}
+  footer{display:none}
+}
+@media (min-width:920px){
+  .dock{inset-inline:auto;left:26px;right:auto;bottom:26px;width:390px;border:1px solid var(--edge);border-radius:16px;max-height:min(70vh,640px)}
+}
+footer{padding-block:20px 34px;color:#5F6775;font-size:11.5px;max-width:78ch}
+footer b{color:#8C94A2;font-weight:500}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.node{opacity:1;transform:none}}
 </style>
 
-<div class="wrap">
+<div class="bg"></div>
+<div class="shell">
   <header>
-    <p class="kicker">نجيب محفوظ · ١٩٨٧</p>
-    <h1>شجرة حديث الصباح والمساء</h1>
-    <p class="lede">سبعة وستون ترجمة مرتّبة على حروف المعجم، تُعيد الرواية ترتيبها هنا على النسب: ثلاثة جدود التقوا في بيت واحد بالغورية — <b>يزيد المصري</b> خازن وكالة الوراق، و<b>عطا المراكيبي</b> الذي وثب من الفقر إلى السرايات، و<b>الشيخ القليوبي</b> الأزهري — ومن مصاهراتهم قامت ست أجيال تمتد من الحملة الفرنسية إلى الانفتاح. اضغط أي اسم لقراءة سيرته.</p>
+    <div class="brand">
+      <p class="eyebrow">نجيب محفوظ · حديث الصباح والمساء</p>
+      <h1>كوكبة الأسرة</h1>
+      <p class="sub">ست وتسعون شخصية تضيء واحدة وراء الأخرى، من ليل الحملة الفرنسية إلى ضجيج الانفتاح. لكل اسم ختمه النجمي الخاص، وستة وثلاثون منهم يحملون اسم من جسّدهم في مسلسل ٢٠٠١. مرّ بالمؤشر على أي اسم ليضيء نسبه، واضغطه لتقرأ سيرته — أو اختر اسمين لتعرف القرابة بينهما.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>٩٦</b><span>شخصية</span></div>
+      <div class="stat"><b>٦</b><span>أجيال</span></div>
+      <div class="stat"><b>٤</b><span>فروع</span></div>
+      <div class="stat"><b>٧</b><span>مصاهرات</span></div>
+      <div class="stat"><b>٣٦</b><span>ممثلًا معروفًا</span></div>
+    </div>
   </header>
 
-  <div class="toolbar">
-    <input class="search" id="q" type="search" placeholder="ابحث باسم شخصية…" autocomplete="off">
-    <div class="chips" id="chips"></div>
-    <div class="zoom">
-      <button class="zbtn" id="zout" title="تصغير" aria-label="تصغير">−</button>
-      <button class="zbtn" id="zin" title="تكبير" aria-label="تكبير">+</button>
-      <button class="zbtn wide" id="zfit">ملء العرض</button>
+  <div class="bar">
+    <div class="field"><input id="q" type="search" placeholder="ابحث عن اسم…" autocomplete="off"></div>
+    <div id="chips" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+    <button class="chip" id="pathBtn" aria-pressed="false">✦ مسار القرابة</button>
+    <div class="spacer">
+      <button class="chip icon" id="zout" aria-label="تصغير">−</button>
+      <button class="chip icon" id="zin" aria-label="تكبير">+</button>
+      <button class="chip" id="zfit">ملء العرض</button>
     </div>
   </div>
 
-  <div class="canvas" id="canvas">
-    <div class="sizer" id="sizer">
-      <div class="stage" id="stage">
-        <svg class="links" id="svg"></svg>
+  <div class="stage-wrap">
+    <div class="scroll" id="scroll">
+      <div class="sizer" id="sizer">
+        <div class="stage" id="stage"><svg class="wires" id="wires"></svg></div>
       </div>
     </div>
+    <div class="tl">
+      <label for="era">اكشف الأجيال</label>
+      <input id="era" type="range" min="1" max="6" value="6" step="1">
+      <span class="era" id="eraName">كل الأجيال · ١٧٩٨ — ١٩٨٥</span>
+    </div>
   </div>
 
-  <div class="panel" id="panel" hidden>
-    <button class="close" id="close">إغلاق</button>
-    <h2 id="p-name"></h2>
-    <p class="meta" id="p-meta"></p>
-    <p class="bio" id="p-bio"></p>
-    <dl class="facts" id="p-facts"></dl>
+  <div class="dock" id="dock" hidden>
+    <button class="x" id="close">إغلاق</button>
+    <div class="hd"><span id="d-medal"></span><div class="who">
+      <h2 id="d-name"></h2>
+      <p class="meta" id="d-meta"></p>
+    </div></div>
+    <p class="credit" id="d-credit" hidden></p>
+    <p class="bio" id="d-bio"></p>
+    <div id="d-rel"></div>
+    <div class="acts">
+      <button class="chip" id="lineBtn">أضئ نسبه حتى الجد</button>
+      <button class="chip" id="pickBtn">اختره لمسار القرابة</button>
+    </div>
+    <div class="path-box" id="pathBox" hidden></div>
   </div>
 
   <footer>
-    <b>ملاحظة على القراءة:</b> الرواية تخلط الأجيال عمدًا — عطا المراكيبي أنجب محمود وأحمد «على كبر» بعد ثرائه، فصار أبناؤهما في صفٍّ أعلى ممن يوازونهم سنًّا في آل عمرو؛ ولذلك تزوج حامد بن عمرو من شكيرة بنت محمود وهي في صفّ أبيه. الخطوط المنقّطة مصاهرات تصل بين الفروع، والخطوط المتصلة نسب. الشارة الحمراء تعني موتًا مبكرًا كما ورد في النص.
+    <b>الأختام النجمية:</b> كل دائرة بجوار اسم رُسمت بالكود خصيصًا لهذا الاسم — كوكبة صغيرة تُشتق من حروفه، فلا تتكرر اثنتان. ليست صورًا للممثلين ولا للشخصيات.<br>
+    <b>طاقم العمل:</b> أسماء الممثلين مأخوذة من صفحة المسلسل على <a href="https://elcinema.com/work/1010927/cast/" target="_blank" rel="noopener" style="color:var(--gold)">السينما.كوم</a> (مسلسل حديث الصباح والمساء، ٢٠٠١ — إخراج أحمد صقر)، وهناك تجد صور كل ممثل.<br>
+    <b>ملاحظة:</b> النقطة الحمراء فوق الاسم تعني موتًا مبكرًا كما ورد في النص. الخطوط المتصلة نسب، والمنقّطة الذهبية مصاهرات تربط الفروع. الأسرة تخلط الأجيال عمدًا: عطا المراكيبي أنجب محمود وأحمد «على كبر» بعد ثرائه، فصار أبناؤهما في صفٍّ أعلى ممن يوازونهم سنًّا في آل عمرو.
   </footer>
 </div>
 
 <script>
-/* ===== البيانات: مستخرجة من متن الرواية (٢٠٢ صفحة) ===== */
-const P = [
-/* ——— آل يزيد المصري ——— */
-{id:"yazid",n:"يزيد المصري",g:1,l:"masri",r:"خازن وكالة الوراق",sp:"فرجة الصياد (بائعة السمك)",
- bio:"إسكندري أهلك الوباء أهله فجاء القاهرة قبيل الحملة الفرنسية بأيام. سكن بيت الغورية في ظل بوابة المتولي، وأصرّ على إدخال ولديه الكُتّاب. رأى سيدي نجم الدين في المنام فشيّد حوش الأسرة بجوار ضريحه، وما زال يستقبل راحلي الذرية. أنجب ذرية كثيرة لم يبقَ منها إلا عزيز وداود.",
- wh:"بيت الغورية"},
-{id:"aziz",n:"عزيز يزيد المصري",g:2,l:"masri",p:"yazid",r:"ناظر سبيل بين القصرين",sp:"نعمة عطا المراكيبي",spr:"nema",
- bio:"نجا من «مصيدة التعليم» حين اقتاد رجالُ محمد علي أخاه داود إلى المدارس الجديدة. سعى له الشيخ القليوبي في ديوان الأوقاف فصار ناظرًا للسبيل، واستبدل بالعمامة طربوشًا فلزمه لقب «عزيز أفندي». زوّجه أبوه من نعمة بنت الجار عطا، فلما أثرى عطا لم ينل هو ولا نعمة من ثرائه شيئًا. مات ساجدًا على سجادة الصلاة.",
- wh:"بيت الغورية"},
-{id:"dawud",n:"داود يزيد المصري",g:2,l:"dawud",p:"yazid",r:"داود باشا — طبيب بعثة فرنسا",sp:"سنية الوراق، ثم الجارية آدم",
- bio:"أخذته شرطة الوالي إلى ما وراء الأسوار ثم أُوفد إلى فرنسا («بلاد الكفار!» صاح أبوه)، فرجع طبيبًا محافظًا على صلاته وزيارة الحسين. رفضته أسرة تركية باعتباره «فلاحًا»، فتزوج سنية حفيدة الوراق وانتقل إلى بيت بالسيدة وبلغ رتبة الباشوية. ولما بلغ الخمسين عشق جارية سوداء وتزوجها فدهشت الأسرة. أيّد الثورة العرابية بقلبه، ورحل هو وعزيز في عامين متعاقبين فدُفنا جنبًا إلى جنب.",
- wh:"بيت السيدة"},
-
-{id:"rashwana",n:"رشوانة",g:3,l:"masri",p:"aziz",r:"بكرية عزيز ونعمة",sp:"المعلم صادق بركات — تاجر الدقيق بالخرنفش",
- bio:"زُفّت في الخامسة عشرة إلى بيت زوجها ببين القصرين. تأخر حملها ثم أنجبت دنانير وحدها. شُلّ زوجها في دكانه وصُفّيت تجارته فعاشت على القليل، ورفضت أن يُضحّى بابنتها من أجلها. ماتت بين ذراعي دنانير وهي تقدّم لها تفاحة العشاء.",wh:"بين القصرين"},
-{id:"danani",n:"دنانير",g:4,l:"masri",p:"rashwana",r:"معلّمة",
- bio:"أول بنات الأسرة تتجاوز الابتدائية، بتأييد أبيها التاجر واعتراض خالها محمود بك. دخلت مدرسة المعلمات يوم كان على المعلمة أن تختار بين الوظيفة والزواج، فاختارت العمل لتعول أمها. ردّت عرض ابن خالها لبيب بازدراء، ورفضت ناظر المدرسة، وصارت عانسًا إلى الأبد. رأت في يوليو انتقامًا من الجبارين، ثم عانت الوحدة والغلاء في الانفتاح.",wh:"بين القصرين",t:"وحيدة"},
-
-{id:"amr",n:"عمرو أفندي",g:3,l:"masri",p:"aziz",r:"موظف بنظارة المعارف",sp:"راضية معاوية القليوبي",spr:"radia",
- bio:"حكيم الأسرة الذي يُرجع إلى رأيه. اكتفى بالابتدائية، وسكن بيتًا حديثًا بميدان بيت القاضي خلف شجرة البلخ، ملاصقًا لبيت أخيه سرور. دمرداشي الطريقة، وفديّ الهوى، اشترك في إضراب الموظفين سنة ١٩١٩ ووزّع الشربات يوم المعاهدة. زوّج ابنه من آل داود وابنه الآخر من آل المراكيبي فضاعف حنق أخيه. أُغمي عليه في الكلوب المصري فحُمل إلى فراشه ومات على صدر راضية.",wh:"ميدان بيت القاضي"},
-{id:"sorour",n:"سرور أفندي",g:3,l:"masri",p:"aziz",r:"موظف بالسكك الحديدية",sp:"زينب عبد الحليم النجار «ست زينب»",
- bio:"دلّلته أمه فكسِل عن التعلم واكتفى بالابتدائية. حادّ اللسان لا يرحم: «لماذا ينسى آل عطا العظام المراكيبَ ودكان الصالحية؟ ولماذا ينسى آل داود عم يزيد وفرجة السماك؟». أدمن شراء أوراق اليانصيب، وحنق على أخيه لأن أبناءه تزوجوا من الفروع الثرية وتُركت بناته. مات بأزمة قلبية في أقل من دقيقة وهو جالس في المشربية، في العام الأخير من خدمته.",wh:"ميدان بيت القاضي"},
-
-/* أبناء عمرو وراضية */
-{id:"sadriya",n:"صدرية",g:4,l:"masri",p:"amr",r:"كبرى ذرية عمرو — «نحلة آل عمرو»",sp:"حمادة القناوي — صعيدي من الأعيان",
- bio:"نابت عن أمها في تربية إخوتها، وفكّت الخط في الكُتّاب ثم رُدّت إلى الأمية لقلة الاستعمال. تزوجت قبل السادسة عشرة فكان ذهابها أول فراق في الأسرة. أنفقت حياتها في ترويض زوجها الثرثار، وقذفت جارةً بالماء ليلًا لأنها غازلته. زوّجت بناتها إلى قنا فقالت: «قضى عليّ بأن يفرق القطار بيني وبين بناتي». أغلقت بيتها في النهاية لترجع إلى أمها حتى أغمضت عينيها.",wh:"خان جعفر"},
-{id:"nihad",n:"نهاد",g:5,l:"masri",p:"sadriya",r:"«حرم العمدة»",sp:"عمدة من أقارب أبيها",
- bio:"طليعة الأحفاد فحظيت بمنزلة طيبة عند عمرو وراضية. خُطبت وهي تقارب الخامسة عشرة وانتقلت إلى الصعيد فتطبّعت بلهجة جديدة، وصارت تزور القاهرة كوافدة غريبة بجسمها المترامي وحليّها الذهبية. أنجبت عشرة، نصفهم ذكور.",wh:"الصعيد"},
-{id:"aql",n:"عقل",g:5,l:"masri",p:"sadriya",r:"مهندس ثم تاجر شقق",sp:"حكمت — أخت زوج أخته نهاد",
- bio:"ورث عيني أمه وأنف أبيه وقصره. عشق الدين والهندسة معًا فاستقر عمرًا في مقام الحيرة: «لم يستطع أن يؤمن ورفض أن يكفر ولاذ بالفرائض». تقدّم لابنة خالته هنومة فردّته لأنها أطول منه. تبيّن أنه عقيم فقالت له جدته راضية: «لا تصدق الأطباء». ربح في الانفتاح أموالًا طائلة من تجارة الشقق.",wh:"بين الجناين"},
-{id:"warda",n:"وردة",g:5,l:"masri",p:"sadriya",r:"«أجمل البنات وميزتها الأولى في العقل»",
- bio:"عشقت البيت القديم بميدان بيت القاضي وتعلّقت بجدتها راضية. خُطبت لابن عم أبيها وهي دون سن الزواج، فأصابتها الملاريا فماتت في عز شبابها، تاركة في قلب أمها جرحًا لا يندمل.",wh:"خان جعفر",t:"ماتت شابة"},
-{id:"dalal",n:"دلال",g:5,l:"masri",p:"sadriya",r:"صغرى بنات صدرية",sp:"زهران المراسيني — عمدة",
- bio:"لفتت نبرتها الصعيدية جدتها راضية: «كيف تسللت لذريتك القاهرية هذه النبرة؟». لم يسمح لها أبوها بأكثر من عامين في الكُتّاب. أجّلت مأساة أختها وردة زفافها عامًا، ثم انتقلت إلى قنا نهائيًا وأنجبت أربع بنات وثلاثة صبيان.",wh:"قنا"},
-
-{id:"amer",n:"عامر",g:4,l:"masri",p:"amr",r:"مدرّس — أول ذكور عمرو",sp:"عفت عبد العظيم داود",spr:"effat",
- bio:"ورث استقامة الأنف عن أمه وهدوء الطبع والتقوى عن أبيه. نشأ ميل متبادل بينه وبين عفت فوق السطح فتحوّل إلى زواج رحّب به عبد العظيم باشا: «عمرو ابن عمي ولا أعدل به أحدًا». شارك في مظاهرات ١٩١٩ ثم كتم وفديته بين آل داود. التهمت شخصية زوجته شخصيته الوديعة فصام رمضان وحده. صار اثنان من تلاميذه في مجلس قيادة ثورة يوليو. مات وهو يحادث عفت بعد اعتقال ابنه قدري بأيام.",wh:"بين الجناين"},
-{id:"shaker",n:"شاكر",g:5,l:"masri",p:"amer",r:"طبيب أمراض دم",sp:"راقصة هنغارية",
- bio:"أحبّ صفاء بنت عمته سميرة فمنعته أمه لأن آل عمرو «دون مستواها». أحبّ راقصة في ملاهي الهرم وتزوجها سرًّا وصارح أباه وحده. حقد على يوليو بعد ضياع الباشوية من آل داود فهاجر من مؤتمر طبي في شيكاغو، ورجع في منتصف الثمانينات بزوجته وأولاده يزور أهله «كضيف أجنبي» ثم عاد.",wh:"الولايات المتحدة"},
-{id:"qadri",n:"قدري",g:5,l:"masri",p:"amer",r:"مهندس يساري",
- bio:"شعلة في اللعب والجد والخيال، أسّس مكتبته في أولى الثانوية ووجد نفسه في اليسارية. قُبض عليه أول مرة فسعى جده عبد العظيم باشا للإفراج عنه بحجة حداثة سنه، ثم تكرر اعتقاله فتجنّب وظائف الحكومة. رفضه جيران لشكهم في إسلامه، وفشلت أمه في تزويجه من بنات خاله. اعتُقل في طوفان سبتمبر ١٩٨١ وأُفرج عنه، فمات أبوه بعدها بأيام.",wh:"بين الجناين"},
-{id:"fayed",n:"فايد",g:5,l:"masri",p:"amer",r:"مستشار بالقضاء",sp:"ماجدة العرشي",
- bio:"كثير الشبه بجدته فريدة حسام في بياض البشرة. عشق القانون والمجد القضائي، وعُيّن في النيابة فور تخرجه وترقى حتى المستشارية. أيّد يوليو ثم السادات في حربه، ولعنه بسبب الانفتاح والنكسة الديمقراطية، ولم يحزن على اغتياله. الوحيد من أبناء عامر الذي لم يكدّر صفو أبويه.",wh:"مصر الجديدة"},
-{id:"farida2",n:"فريدة فايد",g:6,l:"masri",p:"fayed",r:"كيميائية",
- bio:"بنت فايد الوحيدة، سمّتها جدتها عفت باسم أمها فريدة هانم حسام.",wh:"مصر الجديدة"},
-
-{id:"matariya",n:"مطرية",g:4,l:"masri",p:"amr",r:"قمة جمال الأسرة",sp:"محمد أفندي إبراهيم — مدرّس",
- bio:"أشبه الجميع بخالتها المنتحرة صديقة. أحبها لطفي بن عبد العظيم باشا فوأد آل داود الأمر باعتباره «زلة ذوق»، فتفجّر غضب أبيها وصبّت أمها لعناتها. أحبت أخاها قاسم كأبنائها فأهدته ابنها أحمد ليؤنس وحدته. ماتت بالسرطان في الستين، أول الراحلين من جيلها، بعد موت بكرها وترمّلها المبكر وخيبتها في زواج شاذلي.",wh:"حارة الوطاويط"},
-{id:"ahmadmi",n:"أحمد محمد إبراهيم",g:5,l:"masri",p:"matariya",r:"«الجميل ابن الجميلة»",
- bio:"حُمل وهو ابن أربعة أعوام إلى بيت جده بميدان بيت القاضي ليؤنس وحدة خاله قاسم الذي يكبره بعام ونصف. مات في الخامسة بحمى شديدة بعد أن عجز البخور والتعاويذ ثم الدكتور عبد اللطيف، فحزن عليه قاسم حزنًا لا يتعزى، واهتزت في عينيه صورة جده العاجز عن دفع الموت.",wh:"بيت القاضي",t:"مات طفلًا"},
-{id:"shazli",n:"شاذلي",g:5,l:"masri",p:"matariya",r:"مدرّس علوم",sp:"سهير — ممرضة",
- bio:"حلّ محل أخيه الراحل في زمالة خاله قاسم دون أن يبلغ منزلته الأسطورية. خفيف الروح، حاور طه حسين والعقاد وسلامة موسى في قراءاته، ورفض بنات خالاته: «سأتزوج بالأسلوب الذي أقتنع به». أحبّ الممرضة التي جيء بها لحقن جده المحتضر فتزوجها رغم اعتراض أمه. مات له خمسة في سن الرضاعة، ونجا محمد وحده فاستُشهد ضابطًا.",wh:"شارع أبو خودة"},
-{id:"mohshazli",n:"محمد شاذلي",g:6,l:"masri",p:"shazli",r:"ضابط بالجيش",
- bio:"الناجي الوحيد من ذرية شاذلي؛ دعت له جدته مطرية وتوسلت إلى راضية أن تحميه، ثم استُشهد في العدوان الثلاثي فحزن عليه أبوه حزنًا لم يبرأ منه.",wh:"القاهرة",t:"استُشهد"},
-{id:"amana",n:"أمانة",g:5,l:"masri",p:"matariya",r:"حصلت على البكالوريا وتفوقت في الرياضيات",sp:"عبد الرحمن أفندي أمين — موظف بدار الكتب",
- bio:"وُلدت قبيل وفاة أخيها أحمد بأشهر فكانت صورة جديدة لأمها. أرادت الجامعة فمات أبوها فتزوجت رجلًا يكبرها بخمسة عشر عامًا، ودام النقار بينهما حتى أنجبت بكرها. نصحتها ابنة عمها جميلة: «على الزوجة أن تكون مروضة للوحوش».",wh:"شارع الأزهر"},
-{id:"mohamin",n:"محمد",g:6,l:"masri",p:"amana",r:"بكر أمانة",
- bio:"من أول جيل تعلّم في ظل ثورة يوليو، غرق جيله في بحر الحيرة بعد ٥ يونيه، وفاز بعقد عمل في البلاد العربية في موجة الانفتاح.",wh:"الخليج"},
-{id:"amramin",n:"عمرو",g:6,l:"masri",p:"amana",r:"سُمّي على جده لأمه",
- bio:"أحد أبناء أمانة الذين تعلّموا مع أول جيل للثورة ثم سافروا للعمل في البلاد العربية.",wh:"الخليج"},
-{id:"sorouramin",n:"سرور",g:6,l:"masri",p:"amana",r:"من ذرية أمانة",
- bio:"ثالث أبناء أمانة؛ لحق بإخوته إلى عقود العمل في البلاد العربية.",wh:"الخليج"},
-{id:"hadiya",n:"هدية",g:6,l:"masri",p:"amana",r:"مدرّسة",sp:"سليم حسين قابيل",spr:"salim",
- bio:"صغرى ذرية أمانة، تمتّ بجمالها إلى جمال جدتها مطرية. درّست في الخليج عامين واشترت شقة بمنشية البكري، فخطبتها سميرة لابنها سليم واستقر بها. جرفها تيار زوجها الديني حتى قالت: «كنت ضالة فهُديت والحمد لله».",wh:"منشية البكري"},
-
-{id:"samira",n:"سميرة",g:4,l:"masri",p:"amr",r:"«بنت من بنات الفرنجة» بتعبير محمود بك",sp:"حسين قابيل — تاجر تحف بخان الخليلي",
- bio:"الثانية في الجمال بعد مطرية، وأرزنهنّ عقلًا، الوحيدة التي واظبت على قراءة الصحف. زُفّت إلى شقة في عمارة جديدة بشارع ابن خلدون، فخالطت أسرًا يهودية وتعلمت البيانو وربّت كلبة تصحبها في حديقة الظاهر بيبرس. قالت من أول يوم: «سنعلّم البنات كالصبيان». مات زوجها بعد مولد سليم بعام فدبّرت أمرها من مخزن التحف، وفقدت بدرية وحكيم وأسرته.",wh:"شارع ابن خلدون"},
-{id:"badriya",n:"بدرية",g:5,l:"masri",p:"samira",r:"بكرية سميرة",
- bio:"عذبة الملامح ناضجة قبل أوانها. بعد الخامسة عشرة صُرعت وهي في الشرفة مع أمها صرعًا عنيفًا، فانقطعت عن المدرسة وتدهورت حالها رغم الأطباء وبخور راضية، وماتت ضحى بعد أن رأت في نومها «أميرًا يدعوني إلى نزهة في القناطر».",wh:"شارع ابن خلدون",t:"ماتت شابة"},
-{id:"safaa",n:"صفاء",g:5,l:"masri",p:"samira",r:"مترجمة ثم مدير عام",sp:"صبري بك القاضي — وكيل وزارة",
- bio:"أوفر بنات سميرة جمالًا ومرحًا، تخرجت في الآداب قسم اللغة الإنجليزية. أحبها ابن خالها شاكر سرًّا فقطعت العلاقة بازدراء حين صارحت عفتُ أمَّها، فذكّرتها سميرة بما جرى قديمًا لخالتها مطرية. تزوجت رجلًا يكبرها بعشرين عامًا وأشرفت بنفسها على تربية ولديها حتى التحقا بالسلك السياسي.",wh:"حدائق القبة"},
-{id:"ali",n:"علي",g:6,l:"masri",p:"safaa",r:"دبلوماسي",bio:"أحد ولدَي صفاء اللذين أشرفت على تربيتهما حتى دخلا السلك السياسي.",wh:"حدائق القبة"},
-{id:"amrq",n:"عمرو",g:6,l:"masri",p:"safaa",r:"دبلوماسي",bio:"ابن صفاء الثاني، سُمّي على جده لأمه عمرو أفندي، والتحق مثل أخيه بالسلك السياسي.",wh:"حدائق القبة"},
-{id:"hakim",n:"حكيم",g:5,l:"masri",p:"samira",r:"عضو مجلس أمة — من رجال يوليو",sp:"سنية كرم",
- bio:"ولع بالمقامرة صغيرًا ولم يؤمن بالأحزاب: «نريد شيئًا جديدًا». صديق حميم لضابط صار من نجوم يوليو، فوثب مرتبه من العشرات إلى المئات وأعان خاله حامد وابن خالته نادر وخفّف عن أخيه سليم قبل سجنه. سقط بعد ٥ يونيه مع سقوط صديقه، فأصابه ضغط الدم الخبيث. استُشهد ابناه، فانفجر الضغط فقتله.",wh:"العباسية"},
-{id:"husq",n:"حسين",g:6,l:"masri",p:"hakim",r:"ضابط بسلاح الفرسان",
- bio:"سُمّي على جده حسين قابيل، واستُشهد في الميدان في حرب أكتوبر ١٩٧٣ بعد أخيه.",wh:"سيناء",t:"استُشهد"},
-{id:"amrh",n:"عمرو",g:6,l:"masri",p:"hakim",r:"ضابط بسلاح الفرسان",
- bio:"سُمّي على جده لأمه عمرو أفندي، واستُشهد في حرب الاستنزاف.",wh:"سيناء",t:"استُشهد"},
-{id:"farouq",n:"فاروق",g:5,l:"masri",p:"samira",r:"جرّاح صاحب عيادة",sp:"الدكتورة عقيلة ثابت",
- bio:"حلم منذ الصغر بالطب فحققه ونال الدكتوراه وأحرز منزلة فريدة كجرّاح. توزّع قلبه بين الحماس ليوليو مع أخيه حكيم والنفور منها حبًّا في أخيه سليم المسجون، فتجنّب الجهر برأيه. لم تتجاوز تسعيرة أتعابه حدود المعقول أبدًا. قال لخاله عامر: «ولي السادات نيابة عن عبد الناصر ثم قُتل كذلك نيابة عنه!».",wh:"مصر الجديدة"},
-{id:"hanuma",n:"هنومة",g:5,l:"masri",p:"samira",r:"مذيعة بالإذاعة",sp:"نادر عارف المنياوي",spr:"nader",
- bio:"على طراز أمها في الجمال، شديدة الشبه بأخيها سليم في التمسك بالمبادئ. تخرجت في قسم اللغة الفرنسية والتحقت بالإذاعة، وتحمّست ليوليو ثم انقلبت عليها بعد سجن سليم. ردّت ابن خالتها عقل لقصره، وقبلت نادر لمركزه ووسامته، فلما انكشف انحرافه ثارت عليه وانتهى الأمر بالطلاق رغم نصح أمها: «هل أصبحت الحياة الشريفة مستحيلة حقًا؟».",wh:"الزمالك"},
-{id:"samiran",n:"سميرة",g:6,l:"masri",p:"nader",r:"من بنات نادر وهنومة",
- bio:"نشأت في شقة الزمالك مع أمها بعد الطلاق وربّتها على مثالها، واشترى لها أبوها شقة وجهّزها عند الزواج.",wh:"الزمالك"},
-{id:"radian",n:"راضية",g:6,l:"masri",p:"nader",r:"من بنات نادر وهنومة",
- bio:"سُمّيت على جدة الأسرة الكبرى؛ نشأت مع أختيها في كنف أمها بعد الطلاق.",wh:"الزمالك"},
-{id:"safaan",n:"صفاء",g:6,l:"masri",p:"nader",r:"من بنات نادر وهنومة",
- bio:"صغرى بنات نادر وهنومة، جهّزها أبوها كأختيها بشقة عند الزواج.",wh:"الزمالك"},
-{id:"salim",n:"سليم",g:5,l:"masri",p:"samira",r:"محامٍ وكاتب دعوة",sp:"هدية عبد الرحمن أمين",spr:"hadiya",
- bio:"وسيم كأمه، فارع كأبيه، كبير الرأس كأخيه حكيم. عدّته أخته هنومة بتدينها، ورحّب بيوليو وهو في الثانوية ثم انضم للإخوان، فاتُّهم في القضية الكبرى وحُكم عليه بعشر سنوات وخرج قبل ٥ يونيه بعام. ألّف «العصر الذهبي للإسلام» و«أهل العزم والتقوى»، ورُمي في السجن ثانيةً بعد قرارات سبتمبر ١٩٨١. قال لابن خالته شاذلي: «حيرتك مستوردة».",wh:"منشية البكري"},
-
-{id:"habiba",n:"حبيبة",g:4,l:"masri",p:"amr",r:"«النائحة» — تبكي على كل راحل",sp:"الشيخ عارف المنياوي — مدرّس لغة عربية",
- bio:"كادت تماثل سميرة جمالًا لولا سحابة تعلو عينها اليسرى. خُطبت في السادسة عشرة وزُفّت إلى الدرب الأحمر، فأنجبت نادر بعد عام ومات زوجها بالسرطان بعد عام ثانٍ، فصارت أرملة دون العشرين ورفضت كل فرصة زواج من أجل ابنها. أبت أن تهجر الدرب الأحمر بعد ثراء ابنها تمسكًا ببركات الحي وقربًا من أمها. كانت آخر من مات من آل عمرو، «ولما ماتت لم تجد من يبكي عليها».",wh:"الدرب الأحمر"},
-{id:"nader",n:"نادر المنياوي",g:5,l:"masri",p:"habiba",r:"رئيس مجلس إدارة ثم مستورد",sp:"هنومة حسين قابيل، ثم أرملة أسترالية",
- bio:"ربّته أمه الأرملة وحدها. تعلّم الإنجليزية والآلة الكاتبة والتحق بشركة إنجليزية للمعادن، ورقّاه ابن خالته حكيم إلى رئاسة مجلس الإدارة. انكشف انحرافه بعد ١٩٦٧ فأُحيل إلى المعاش بشفاعة حكيم، وطلّقته هنومة. أثرى في الانفتاح من الاستيراد، وتزوج أرملة أسترالية وأقام في فيلا بالمعادي، واشترى لكل بنت من بناته شقة.",wh:"الزمالك ثم المعادي"},
-
-{id:"hamed",n:"حامد",g:4,l:"masri",p:"amr",r:"ضابط شرطة",sp:"شكيرة محمود عطا، ثم عصمت الأورفلي",spr:"shakira",
- bio:"ضخم الجسم محب للعراك، أتعب أباه في تربيته أكثر من ذريته كلها. دخل مدرسة الشرطة بنصيحة خاله محمود، واتُّهم في ثورة ١٩١٩ بالتحريض على الإضراب فأُنزل سنة. أقام في جناح بسراي ميدان خيرت «حاسبًا لجبروت حميه»، وساءت معاملته لزوجته حتى صرخت: «إني أكرهك أكثر من الموت» فطلّقها. أحالته يوليو إلى المعاش فتوسّط له ابن أخته حكيم، ومات بسرطان الدم وهو يجهل مرضه.",wh:"ميدان خيرت ثم المنيل"},
-{id:"wahida",n:"وحيدة",g:5,l:"masri",p:"hamed",r:"طبيبة",sp:"زميل باكستاني",
- bio:"ذكية جميلة القلب غالتها رياح النكد: تشرّب قلبها الكآبة في مناخ الحياة الزوجية المسموم بين أبويها، وترسّب النفور من أبيها في أعماقها، ولم تجد في أخيها صالح عزاء. التحقت بكلية الطب على مثال خالتها نادرة، ثم سافرت للعمل في السعودية «هاربة»، وفاجأت أمها برسالة تنبئها بزواجها.",wh:"السعودية"},
-{id:"saleh",n:"صالح",g:5,l:"masri",p:"hamed",r:"صاحب مزرعة ببني سويف",sp:"جلفدان — من قريبات جدته نازلي",
- bio:"ارتبط بأمه أكثر من أبيه وأدانه: «إنه يظلم ماما يا عمي». متشدد في الحكم بالقرآن والسنة، أحبّ الإخوان دون أن ينخرط فيهم، وأدان ولاء آل المراكيبي للملك ونفر من آل أبيه وآمن مع أمه بأن جدته راضية مخبولة. أقام مزرعة حديثة على أرض أمه، وربّى العجول وأنشأ منحلًا، وسمّى القاهرة «مدينة العذاب».",wh:"بني سويف"},
-
-{id:"qasim",n:"قاسم — «الشيخ قاسم»",g:4,l:"masri",p:"amr",r:"آخر عنقود عمرو وراضية",sp:"بهيجة سرور",spr:"bahiga",
- bio:"الوحيد من الأبناء الذي لم يبارح البيت القديم. أخلص المستمعين لأمه وأصدق التابعين لها في جولاتها الروحية. أُغمي عليه بعد تبخيرها فقرر الطبيب «صرعًا خفيفًا» وقالت هي بيقين: «بل هو اتصال بأهل الغيب». بدّل ملابسه الإفرنجية بالجلباب والعمامة وأرسل لحيته، وقصده أصحاب الآمال بالهدايا ثم النقود حتى فاق رزقه رزق أخويه. تزوج ابنة عمه في ليلة غارة جوية سنة ١٩٤١.",wh:"ميدان بيت القاضي"},
-{id:"naqsh",n:"النقشبندي",g:5,l:"masri",p:"qasim",r:"مهندس — دكتوراه من ألمانيا",sp:"سيدة ألمانية",
- bio:"جاء بعد سنوات عقم بوعدٍ من أبيه: «ستنجبين ذكرًا عندما يرضى القمر». تخرج مهندسًا عام النكسة وسافر في بعثة إلى ألمانيا الغربية مهيض الجناح، فقرر الهجرة نهائيًا وتجنّس. ودّعه أبوه مرتين بالعبارة نفسها: «الله معك، إني أودعك بلا دموع».",wh:"ألمانيا الغربية"},
-
-/* أبناء سرور وزينب */
-{id:"labib",n:"لبيب",g:4,l:"masri",p:"sorour",r:"رئيس محكمة استئناف الإسكندرية",sp:"مطربة سابقة عرفها في شبابه",
- bio:"«صاحب العقل الكامل» كما سمّته راضية: الابتدائية في العاشرة والبكالوريا في السادسة عشرة والليسانس في الثامنة عشرة ضمن العشرة الأوائل، فأبت النيابة تعيين معاون قاصر. أجّل الزواج ليزوّج أخواته فانطلقت غرائزه المكبوحة إلى الخمر والنساء. تزوج في آخر العمر وحجّ، ثم استهلكت الخمر كبده فمات بنزيف قبيل هزيمة يونيه بأشهر.",wh:"الإسكندرية"},
-{id:"gamila",n:"جميلة",g:4,l:"masri",p:"sorour",r:"أجمل من رآه ميدان بيت القاضي بعد مطرية",sp:"إبراهيم الأسواني — عضو مجلس النواب",
- bio:"عبثت بابن عمها قاسم في صباها فضبطتهما راضية على السطح. عولجت من عقمها فأنجبت خمسة ذكور عاش منهم اثنان، وحوّلها الزواج من الرعونة إلى رزانة عجيبة. فقدت ولديها الطيارين في حربين، ثم ماتت بسرطان المعدة «كأنها مقطوعة من شجرة لا أهل لها».",wh:"أسوان"},
-{id:"sorourasw",n:"سرور الأسواني",g:5,l:"masri",p:"gamila",r:"ضابط طيار",
- bio:"سُمّي على جده سرور أفندي؛ أُصيبت طائرته في حرب ١٩٥٦ فلقي مصرعه.",wh:"أسوان",t:"استُشهد"},
-{id:"mohasw",n:"محمد الأسواني",g:5,l:"masri",p:"gamila",r:"ضابط طيار",
- bio:"لحق بأخيه سرور فقُتل في حرب ١٩٦٧، «وانقرضت هذه الأسرة بقضاء لا رادّ له».",wh:"أسوان",t:"استُشهد"},
-{id:"bahiga",n:"بهيجة",g:4,l:"masri",p:"sorour",r:"زوجة ابن عمها قاسم",sp:"قاسم عمرو",spr:"qasim",
- bio:"ورثت عن أمها وجهًا في هالة بيضاء وعينين خضراوين، ومن أبيها صوته الدسم. أحبت قاسم فمنعتها أمها لتماثل السن، فلما حلّ به ما حلّ تلقت الطعنة في صمت وطال انتظارها حتى قاربت الثلاثين وحيدة في البيت القديم. ثم طلبها فتزوجا في ليلة غارة جوية، «قيل إنه اليأس وقيل إنه الحب القديم»، وأنجبت النقشبندي بعد سنوات عقم وحزنت على هجرته حزنًا شديدًا.",wh:"ميدان بيت القاضي"},
-{id:"amir",n:"أمير",g:4,l:"masri",p:"sorour",r:"طالب وفدي",
- bio:"أشبه الجميع بعمه عمرو في رجولته وتقواه، تعصّب دينيًّا حتى خاصم أخته جميلة على تحررها. أصابته هراوة في مظاهرات الاحتجاج على دكتاتورية محمد محمود فلبث أسبوعين في المستشفى، وتألق في أوساط الشباب الوفدي، ثم قُتل برصاصة في مظاهرة ضد إلغاء دستور ١٩٢٣، ولم يُسمح بشهود دفنه إلا لأبيه وعمه وإخوته منعًا لمظاهرة جديدة.",wh:"ميدان بيت القاضي",t:"قُتل في مظاهرة"},
-{id:"hazem",n:"حازم",g:4,l:"masri",p:"sorour",r:"مهندس — صاحب ملايين في الانفتاح",sp:"سميحة محمد سلامة — كريمة أستاذه",
- bio:"نشأ عزوفًا متوحدًا حتى قال عنه عمه: «ابنك حازم عدو للبشر». ضعف عينه اليسرى بلغ بها العمى فمنعته الحكومة، فالتحق بشركة مقاولات أستاذه وتزوج ابنته وحلّ محله بعد وفاته. أُممت الشركة ثم فتح في عهد السادات مكتبًا هندسيًّا وبات من أصحاب الملايين. قطعت زوجته صلته بأهله حين رفضت الذهاب إلى ميدان بيت القاضي «الملىء بالحشرات».",wh:"فيلا الدقي"},
-{id:"hosny",n:"حسني",g:5,l:"masri",p:"hazem",r:"مهندس ثم منتج سينمائي",sp:"عجيبة — ممثلة",
- bio:"حطّم سدود أمه ورفض وساطتها في اختيار زوجة: «شكرًا لا حاجة بي إلى خاطبة». تزوج فنانة اشترطت ألا يطالبها بهجر حياتها الفنية، وأنشأ لها شركة إنتاج وأنتج فيلمين بلا أثر. ضبطها مع ممثل في شقة مفروشة بالعجوزة فقتلها ضربًا، وحُكم عليه بخمسة عشر عامًا. عرف الأقارب الخبر من الصحف: «يا ألطاف الله، إنه ابن حازم بن سرور أفندي!».",wh:"شارع الهرم",t:"سُجن"},
-{id:"adham",n:"أدهم",g:5,l:"masri",p:"hazem",r:"مهندس معماري",sp:"كريمة محمد فوزي",
- bio:"وسيم كأبيه وضعيف العين اليسرى مثله، وجد مكتب أبيه الهندسي في انتظاره. اختار زوجته بنفسه وأعلن ذلك في حديقة مينا هاوس. لا يعرف من شجرة أهله إلا فرع أمه: يعرف عابرًا أن جده سرور أفندي كان موظفًا بالسكك الحديدية، وأن له عمّات لم يرَ أحدًا منهن، وأن أسرته من حي الحسين الذي يقرنه بالفقر والتأخر.",wh:"المعادي"},
-{id:"zina",n:"زينة",g:4,l:"masri",p:"sorour",r:"صغرى بنات سرور",sp:"صبري المقلد — موظف بشركة كيماويات",
- bio:"حُجزت في البيت مبكرًا بعد فكّ الخط، وانتبهت قبل الجميع إلى «مناورات القلوب» بين أختها بهيجة وقاسم. قبلت عريسًا يكبرها بعشرين عامًا رغم شعورها بالذنب تجاه أختها: «تريد زوجًا بأي ثمن… وليكن الله مع بهيجة». ماتت ابنتها طفلة، وصدمها زواج ابنها من أرملة في مثل سنها، وقطع الزمن ما بينها وبين أهلها.",wh:"بين الجناين"},
-{id:"khalil",n:"خليل المقلد",g:5,l:"masri",p:"zina",r:"من رجال قضايا الحكومة",sp:"خيرية المهدي — أرملة جارة",
- bio:"أشبه الأحفاد بخاله لبيب، فائق الجمال الموروث عن جدته ست زينب. في ختام الثانوية نشأت علاقة بينه وبين جارة أرملة تكبره خمسة عشر عامًا فتزوجها رغم معارضة أمه، وحسمها خاله: «احمدي ربنا، العروس عمرها كبير ولكن مالها وفير». ماتت في الخمسين في جراحة كلوة فلم يفكر في الزواج ثانية.",wh:"بين الجناين"},
-{id:"othman",n:"عثمان",g:6,l:"masri",p:"khalil",r:"ابن خليل الوحيد",
- bio:"وُلد قبل أن ينال أبوه الليسانس، وهو الولد الوحيد لخيرية.",wh:"بين الجناين"},
-{id:"amira",n:"أميرة",g:5,l:"masri",p:"zina",r:"شقيقة خليل الصغرى",
- bio:"اقتبست من أمها أنفًا أفسد صفحة وجهها الحسن، ثم خطفها الموت صغيرة عقب نزلة معوية حادة، مخلّفة جرحًا غائرًا في قلب أمها الشابة.",wh:"بين الجناين",t:"ماتت طفلة"},
-
-/* آل داود */
-{id:"abdelazim",n:"عبد العظيم داود",g:3,l:"dawud",p:"dawud",r:"باشا — رئيس محكمة الاستئناف العليا",sp:"فريدة هانم حسام",
- bio:"الابن الوحيد الباقي لداود باشا وسنية الوراق. أراده أبوه طبيبًا فاتجه إلى الحقوق «مدرسة الصفوة والوزراء» وتعيّن في النيابة دون وساطة. أول من اختار زوجته برؤية عينيه: لمح فريدة في حنطور فذهبت سنية وراضية ورشوانة يرفعن التقرير عنها. من أنصار حزب الأمة ثم عدلي بعد انقسام الجبهة، يسخر من وفدية ابن عمه عمرو ولا يؤمن بالاستقلال التام. شيّد لابنتيه بيتين ببين الجناين، ومات بعد يوليو وقد توغّل في الشيخوخة.",wh:"فيلا شارع السرايات — العباسية الشرقية"},
-{id:"lotfy",n:"لطفي",g:4,l:"dawud",p:"abdelazim",r:"باشا — طبيب ووكيل وزارة",sp:"آمال بهجت عمر",
- bio:"بكري عبد العظيم، صورة من أمه في الجمال وحظي بذكاء أبيه. هام بالحي العتيق وبأطوار راضية، وفُتن بمطرية بنت عمرو فنشأت قصة حب «فجّرت قنبلة» في فيللا آل داود فوُئدت. درس الطب وسافر في بعثة إلى ألمانيا ونال البكوية ثم الباشوية، وزوّجه عمرو من ابنة صديق صباه. ألغت يوليو باشويته، وخسر مدخراته في التأميم، ومات بسرطان المعدة في السبعين — «سنّ تُعتبر من الشباب في أسرة عبد العظيم المعمّرة».",wh:"فيلا الدقي"},
-{id:"faridal",n:"فريدة لطفي",g:5,l:"dawud",p:"lotfy",r:"زوجة رجل في السلك السياسي",
- bio:"عاشت عقب المراهقة في الخارج مع أختها وأخيها.",wh:"الخارج"},
-{id:"mervat",n:"ميرفت",g:5,l:"dawud",p:"lotfy",r:"زوجة رجل في السلك السياسي",
- bio:"غادرت مصر عقب المراهقة واستقرت في الخارج.",wh:"الخارج"},
-{id:"dawudl",n:"داود لطفي",g:5,l:"dawud",p:"lotfy",r:"طبيب في سويسرا",sp:"سيدة سويسرية",
- bio:"حمل اسم جد الأسرة داود باشا، وعاش طبيبًا في سويسرا وتزوج من أهلها.",wh:"سويسرا"},
-{id:"ghassan",n:"غسان",g:4,l:"dawud",p:"abdelazim",r:"بقضايا الحكومة — «عدو البشر»",
- bio:"الوحيد من أبناء عبد العظيم الذي لم يقتبس من أمه شيئًا: قصير نحيف غامق السمرة متجهم بلا صديق واحد. اجتهد وسهر فلم يظفر إلا بالنجاح العادي، ووجد في الحقوق قريبه لبيب محاطًا بهالة الإعجاب فضاعف ذلك كآبته. رفض الزواج رغم إلحاح أمه: «العقم هو العزاء المتبقي لنا!». صدمته يوليو وضياع رتب أسرته، وواصل حياته كالشبح بين الطعام والكتب والتليفزيون.",wh:"فيلا شارع السرايات"},
-{id:"halim",n:"حليم",g:4,l:"dawud",p:"abdelazim",r:"ضابط شرطة",
- bio:"صاحب صوت عذب ومزاح وعربدة: «لولا تقاليد الأسرة لكنت مطرب العصر». احتقر آل المراكيبي «من صلب رجل كان يبيع المراكيب»، وحاول إغواء قريباته لولا ثقل التقاليد. حرس الأميرات والوزراء وزيّن شقته بهداياهم. بعد يوليو كبس البوليس شقة قمار سري كان بها فقدّم استقالته، واستبدل بالويسكي الحشيش لرخصه، ومات ليلة استدعى فيها ابن عمه: «تعالَ أنت وعصمت هانم.. إني أحتضر».",wh:"شارع النيل"},
-{id:"fahima",n:"فهيمة",g:4,l:"dawud",p:"abdelazim",r:"«عاشقة الورد»",sp:"علي طلعت — مستشار بالاستئناف",
- bio:"أجمل ذرية عبد العظيم، فاقت أمها جمالًا وكانت أطيب قلبًا من أختها. فقدت ذريتها الثلاثة بعد اكتمال شبابهم، فبدأت تتساءل عن المصير واقتنت كتب تحضير الأرواح وآمنت أخيرًا براضية بعد أن كانت تسخر منها. مات زوجها بأنفلونزا حادة فعمّرت وحيدة بعد رحيل جيلها كله، فلم يبقَ لها إلا كلمة في التليفون مع شقيقتها عفت.",wh:"بين الجناين"},
-{id:"dawudt",n:"داود علي طلعت",g:5,l:"dawud",p:"fahima",r:"طالب بالحقوق",
- bio:"مات بالتيفود وهو في السنة الثالثة بكلية الحقوق.",wh:"بين الجناين",t:"مات شابًّا"},
-{id:"abdazimt",n:"عبد العظيم علي طلعت",g:5,l:"dawud",p:"fahima",r:"خريج كلية العلوم",
- bio:"مات بالكوليرا بعد تخرجه في العلوم بأشهر.",wh:"بين الجناين",t:"مات شابًّا"},
-{id:"faridat",n:"فريدة علي طلعت",g:5,l:"dawud",p:"fahima",r:"طالبة بالثانوية العامة",
- bio:"ماتت بروماتيزم القلب وهي في الثانوية العامة، آخر من فقدت فهيمة من ذريتها الثلاثة.",wh:"بين الجناين",t:"ماتت شابة"},
-{id:"effat",n:"عفت",g:4,l:"dawud",p:"abdelazim",r:"آخر ذرية عبد العظيم — خريجة الميردي دييه",sp:"عامر عمرو",spr:"amer",
- bio:"«إفرنجية ذوقًا وعقلًا وتراثًا»: تتقن الفرنسية والبيانو وتعرف عن فرنسا أكثر مما تعرف عن بلدها. شيّد لها أبوها بيتًا جميلًا ببين الجناين بحديقة فيها تكعيبة عنب وشجرة جوافة. شخصية قوية التهمت شخصية زوجها الوديع. منعت ابنها شاكر من الزواج بابنة عمته لأن آل عمرو دون مستواها، ومقتت يوليو لإلغائها باشوية أخيها. مات عامر وهو يحادثها فاستقبلت حياة صامتة تعلوها كآبة دائمة.",wh:"بين الجناين"},
-
-/* ——— آل المراكيبي ——— */
-{id:"atta",n:"عطا المراكيبي",g:1,l:"marakibi",r:"من دكان الصالحية إلى سرايات ميدان خيرت",sp:"سكينة بنت جلعاد المغاوري، ثم هدى الألوزي",
- bio:"يتيم التقطه جلعاد المغاوري صاحب دكان الصالحية وربّاه ثم زوّجه ابنته الوحيدة فورث الدكان. جار يزيد المصري في بيت الغورية وصديقه الذي خطب له فرجة السماك. ماتت سكينة بعد عام من زواج ابنتها فتزوج أرملة ثرية تقيم في البيت المواجه لدكانه، ووثب «من حضيض الفقر إلى ذروة الثراء»: اشترى أرضًا وشيّد السراي الكبرى وعزبة بني سويف. أوصى ابنه: «اعتبر العزبة وطنك».",wh:"سراي ميدان خيرت"},
-{id:"nema",n:"نعمة عطا المراكيبي",g:2,l:"marakibi",p:"atta",r:"بنت عطا من زوجته الأولى",sp:"عزيز يزيد المصري",spr:"aziz",
- bio:"ورثت عن أمها عينيها النجلاوين وشعرها الغزير وصحة لم تحظَ بها الأم. صدمها زواج أبيها من الأرملة الغنية وقبضُه يده عنها، فحلمت أن تسبق الأرملة أباها إلى الآخرة فيرث ابناها، فخاب رجاؤها إذ مات قبل زوجته، «ولحقت به الأرملة بعد أشهر» فورث محمود وأحمد كل شيء. عوّضها برّ أخويها بها وبأولادها، وامتد بها العمر حتى رأت أحفادها.",wh:"بيت الغورية"},
-{id:"mahmud",n:"محمود بك عطا",g:2,l:"marakibi",p:"atta",r:"«الجد الجبار» — صاحب السراي والعزبة",sp:"نازلي بكري العرشي",
- bio:"أول ثمرة زواج عطا من الأرملة الثرية، نشأ بين سراي ميدان خيرت وسراي بني سويف ولم يعلم شيئًا عن حياة أبيه الأولى. اكتفى بالابتدائية ولازم أباه في العمل، وفرض سطوته على السراي بما فيها أسرة أخيه واستأثر بإدارة الأرض. تبرع لثورة ١٩١٩ بآلاف الجنيهات ثم والى العرش فنال البيكوية. بصق في وجه ابن أخيه عدنان فانقسمت الأسرة جبهتين، ولم يصالح أخاه إلا على فراش الموت.",wh:"سراي ميدان خيرت"},
-{id:"ahmadb",n:"أحمد بك عطا",g:2,l:"marakibi",p:"atta",r:"«الوديع الدمث»",sp:"فوزية بكري العرشي",
- bio:"خاب فيه أمل أبيه فتركه «لحياته الوادعة»، وسلّم إدارة أرضه لأخيه حتى ألحّ عليه ابنه عدنان فاستردّها وهو جاهل بكل شيء. تعرّض لخصام مزّق وحدة الأسرة سنين. أصابه الفالج قبيل الحرب العظمى الثانية فحُمل إلى فراشه بالقاهرة، وصالحه محمود قبل وفاته بساعات، وكان «أول من هوى من الجيل الثاني».",wh:"سراي ميدان خيرت"},
-{id:"hassanm",n:"حسن محمود",g:3,l:"marakibi",p:"mahmud",r:"لواء شرطة",sp:"زبيدة — من أسرة أمه",
- bio:"اشتهر بالعنف في تفريق المظاهرات فهاجمته الصحف الوفدية وزكّته عند السراي والإنجليز فنال ترقيات استثنائية، وقال عنه سرور أفندي: «خائن وابن مراكيبي!». أُصيب في عهد صدقي بطوبة في رأسه. كان أعنف إخوته على آل عمه واعتدى على ابن عمه عدنان. أحالته يوليو إلى المعاش، فباع أرضه وأنشأ متجرًا في شارع شريف وشيّد قصرًا بالمهندسين، ثم انقلبت به المرسيدس في شارع الهرم واحترقت.",wh:"مدينة المهندسين",t:"مات في حادث"},
-{id:"mahmudh",n:"محمود حسن",g:4,l:"marakibi",p:"hassanm",r:"طبيب مهاجر",
- bio:"يُضرب به المثل في الجمال والذكاء، تربى في مدارس الثورة وتشبّع بفلسفتها، ثم زلزلته نكسة ١٩٦٧ فهاجر مع أخيه شريف إلى الولايات المتحدة بعد رحيل الزعيم.",wh:"الولايات المتحدة"},
-{id:"sharif",n:"شريف حسن",g:4,l:"marakibi",p:"hassanm",r:"طبيب مهاجر",
- bio:"هاجر مع أخيه محمود إلى الولايات المتحدة بعد ١٩٦٧ لبدء حياة علمية ناجحة.",wh:"الولايات المتحدة"},
-{id:"omarh",n:"عمر حسن",g:4,l:"marakibi",p:"hassanm",r:"طبيب",
- bio:"عمل بمستشفيات الحكومة ثم فاز بعقد عمل في السعودية.",wh:"السعودية"},
-{id:"shakira",n:"شكيرة",g:3,l:"marakibi",p:"mahmud",r:"كبرى بنات محمود بك",sp:"حامد عمرو",spr:"hamed",
- bio:"«صورة من أبيها في تكوينه الصلب ونسخة من أمها في التهذيب والورع»، لم يسمح لها أبوها بتجاوز الابتدائية وخطب لها ابن أخته بنفسه وقايةً من الانتهازيين. فتر زوجها عنها منذ شهر العسل وبدأ عراك دام سنين انتهى بالطلاق، واتُّهم سحر حماتها راضية بأنه وراء ذلك. بعد الطلاق استغرقها التدين وحجّت أكثر من مرة، وظلت تلعن حامدًا حتى بعد موته.",wh:"سراي ميدان خيرت"},
-{id:"abdohm",n:"عبده محمود",g:3,l:"marakibi",p:"mahmud",r:"ضابط بسلاح المهندسين — من الضباط الأحرار",sp:"جولستان من آل الماوردي (انتهى بالطلاق)",
- bio:"وسيم نجيب تلقّن الأخلاق والتدين على يد أمه، وتفوق في السباحة وعشق المطالعة. خرج عن خط الأسرة السياسي فلم يتشيّع للملك، وانضم إلى «الجيل القلق الغاضب». طُلّقت زوجته لأنه بخيل رغم يسره وهي محبة للبذخ، فقرر ألا يتزوج بقية عمره. صار بعد يوليو من رجال الصف الثاني وتولى رئاسة شركة المعادن، ثم أنشأ في الانفتاح مكتبًا هندسيًّا وأثرى ثراءً فاحشًا «ويقينه أنه يكتنز المال للآخرين».",wh:"سراي ميدان خيرت"},
-{id:"nadira",n:"نادرة",g:3,l:"marakibi",p:"mahmud",r:"أستاذة دكتورة في طب الولادة",
- bio:"دون إخوتها الذكور في الوسامة وعلى مثال أختها شكيرة في الخلق. أحبت ابن عمها مازن من المراهقة حتى آخر يوم في حياته ولم تنقطع صلتها به طوال أعوام الخصومة. بعد غرقه قضت عامًا أسيرة للكآبة ثم تخصصت ونالت الدكتوراه ونجحت نجاحًا مرموقًا، ورفضت كل فرص الزواج ولم تتزوج قط.",wh:"سراي ميدان خيرت"},
-{id:"maher",n:"ماهر",g:3,l:"marakibi",p:"mahmud",r:"ضابط بالحرس الخاص للزعيم",
- bio:"طويل رشيق وسيم ذو كبرياء طبقي، تخرج في الكلية الحربية مطلع الحرب العظمى الثانية وانتظم في الضباط الأحرار بتأثير أخيه. عُيّن بعد الثورة في الحرس الخاص للزعيم وظل حتى وفاته ثم أُحيل إلى المعاش. استأجر شقة في الزمالك لغرامياته ولم يتزوج قط. بعد الانفتاح باع أرضه واشتغل بالاستيراد وأثرى إثراءً عظيمًا.",wh:"الزمالك"},
-{id:"adnan",n:"عدنان أحمد عطا",g:3,l:"marakibi",p:"ahmadb",r:"زراعي — عضو مجلس الشعب",sp:"ست تهاني — أرملة من بنات البلد",
- bio:"أبوه وديع وأمه هانم جليلة، لكنه أشبه بعمه الجبار في الصلابة وحب السيطرة. تمرّد على وصاية عمه وانتزع الأرض لأبيه فاشتعل الخصام الذي قسم الأسرة. تزوج أرملة تكبره رغم جزع أمه وحملها إلى سراي العزبة. الوحيد في الأسرة الذي طُبّق عليه الإصلاح الزراعي، فكره الثورة وسعد بالنكسة، ثم عدّ الانفتاح «بابًا من أبواب الجنة» وربح من العجول والدجاج أرباحًا خيالية.",wh:"عزبة بني سويف"},
-{id:"fouad",n:"فؤاد",g:4,l:"marakibi",p:"adnan",r:"زراعي",
- bio:"نجح في أن يصير زراعيًّا كأبيه ويعاونه في إدارة العزبة.",wh:"بني سويف"},
-{id:"farouqa",n:"فاروق عدنان",g:4,l:"marakibi",p:"adnan",r:"لم يوفق في الدراسة",
- bio:"احترف الإجرام على الأسلوب الريفي حتى قُتل رميًا بالرصاص وهو يغادر المسجد عقب صلاة الجمعة.",wh:"بني سويف",t:"قُتل"},
-{id:"mazin",n:"مازن أحمد عطا",g:3,l:"marakibi",p:"ahmadb",r:"طالب بالزراعة",
- bio:"«ازدهرت في شخصه دماثة أبيه وجمال أمه»، وأحبّ ابنة عمه نادرة منذ الصباح ولم يعلنا الخطبة. سعى سرًّا لدى قريبه عمرو أفندي للتوفيق بين الشقيقين المتخاصمين، وقرر إعلان خطبته بعد انقضاء عام الحداد على أبيه. سافر في مطلع الربيع مع بعثة طلبة إلى الإسكندرية فغرق وهو يستحم في الشاطبي، فورثه أخوه فصار أثرى آل عطا.",wh:"الإسكندرية",t:"غرق"},
-
-/* ——— آل القليوبي ——— */
-{id:"qalyubi",n:"الشيخ القليوبي",g:1,l:"qalyubi",r:"مدرّس بالأزهر — ساكن سوق الزلط",
- bio:"ثالث أصدقاء قهوة الشربيني بالدرب الأحمر مع يزيد المصري وعطا المراكيبي، وكان يزيد أحب إليه من عطا. بارك إدخال عزيز الكُتّاب: «نِعم الرأي.. وبعد الكُتّاب إلى الأزهر»، وسعى له في ديوان الأوقاف حتى عُيّن ناظرًا للسبيل. شهد نابليون وثورتي القاهرة وولاية محمد علي ومذبحة المماليك، ثم تقاعد لكبره فحلّ ابنه محله.",wh:"سوق الزلط — باب الشعرية"},
-{id:"muawiya",n:"الشيخ معاوية القليوبي",g:2,l:"qalyubi",p:"qalyubi",r:"عالم أزهري — من رجال الثورة العرابية",sp:"جليلة الطرابيشية",
- bio:"نال العالمية وغرم بالنحو وحلّ محل أبيه في الأزهر. تحمّس للثورة العرابية فقُبض عليه بعد فشلها وحُكم عليه بالسجن خمسة أعوام، فطافت زوجته بالأضرحة ودبّرت شئون الأسرة بمال ورثته. خرج غريبًا حتى عمل بمدرسة أهلية، ولم يجد عينًا تنظر إليه بعطف سوى عين صديقه ناظر السبيل، فخطب ابنته الكبرى لابنه عمرو. مات قبل أن يشهد زفافها: وصل نيشان العروس يوم وفاته فأطلقت جليلة زغرودة ثم عادت تعوّل.",wh:"سوق الزلط"},
-{id:"radia",n:"راضية",g:3,l:"qalyubi",p:"muawiya",r:"«سيدة الأسرار الغيبية» — عمّرت فوق المائة",sp:"عمرو أفندي",spr:"amr",
- bio:"كبرى بنات الشيخ معاوية وأقواهنّ شخصية. ورثت عن أمها موسوعة الغيبيات والكرامات والطب الشعبي وقراءة الطالع فبرعت فيها أكثر من الجميع. خُطبت وهي في الرابعة عشرة وانتقلت إلى ميدان بيت القاضي. سجّلت سعد زغلول «وليًّا» جديدًا في قاموسها، ثم النحاس، ثم عبد الناصر. أشد ما رعبها وفاة عمرو ومأساة قاسم. ماتت وصدرية عند قدميها وهي تغني «عودي يا ليالي العز عودي».",wh:"ميدان بيت القاضي"},
-{id:"shahira",n:"شهيرة",g:3,l:"qalyubi",p:"muawiya",r:"«أم عبده» — صاحبة القطط",sp:"الشيخ علي بلال — قارئ ثم مطرب",
- bio:"تشبه راضية جسمًا ووجهًا وتفوقها في العنف وسلاطة اللسان. زُفّت إلى أحد تلاميذ أبيها من قراء القرآن، فتحوّل إلى الغناء وسجّل أسطوانات رائجة وأدمن الحشيش والخمر وعزم على تطليقها، فمات بسكتة قلبية في مجلس أنس قبل أن ينفذ. مات ابنها صغيرًا فعادت إلى بيت أمها، وولعت بتربية القطط وزعمت أنها خبيرة بلغتها تتصل بها بعالم الغيب. أصابها وباء الكوليرا سنة ١٩٤٧ فماتت مخلّفة نحو أربعين قطة.",wh:"سوق الزلط"},
-{id:"abdobilal",n:"عبده علي بلال",g:4,l:"qalyubi",p:"shahira",r:"سُمّي تيمنًا بعبده الحامولي",
- bio:"جميل الصورة، «انخطف في حمى كحلم» فمات صغيرًا، وبقي لقب أمه «أم عبده» يلازمها إلى آخر عمرها.",wh:"باب البحر",t:"مات طفلًا"},
-{id:"siddiqa",n:"صديقة",g:3,l:"qalyubi",p:"muawiya",r:"أجمل بنات الشيخ معاوية",sp:"طبيب أسنان شامي",
- bio:"وُلدت بعد سجن أبيها بنصف عام، ونشأت ثمرة خالصة لتراث أمها: عذبة المعاملة محبّة للغناء. تزوجت وأقامت بعمارة جديدة بالفجالة، فمات زوجها قبل أن تحبل ومرضت بالسل فرجعت إلى حضن أمها، ثم يئست فرمت بنفسها في بئر البيت فانتُشلت في الرمق الأخير وماتت قبيل الفجر. غطّت جليلة البئر بعدها بغطاء خشبي، وكانت تراها في المنام.",wh:"سوق الزلط",t:"انتحرت"},
-{id:"balegh",n:"بليغ",g:3,l:"qalyubi",p:"muawiya",r:"تاجر جملة — صاحب «عابدين القبيسي»",sp:"أمينة الفنجري",
- bio:"آخر عنقود الشيخ معاوية، أُلحق بالأزهر مبكرًا فأدمن الخمر بعد وفاة أبيه وطُرد دون أن ينال العالمية. باع أرضًا نزلت له عنها أمه واشتغل ببقالة الجملة يجلب الجبن والسمن من قليوب، فأثرى في الحرب الأولى وبلغ غاية الثراء في الثانية وشيّد سرايا عُرفت باسمه. ظل مدمنًا مع محافظته على صلاته وصومه وزكاته، حتى أصابه تليف الكبد فلزم الفراش نصف عام.",wh:"القبيسي"},
-{id:"ibnbalegh",n:"ابن بليغ",g:4,l:"qalyubi",p:"balegh",r:"من كبار القضاة",
- bio:"الولد الوحيد لبليغ وأمينة الفنجري؛ امتد عمر أبيه حتى رآه في منزلة كبار القضاة.",wh:"القاهرة"}
-];
-
+const DB = {"P":[{"id":"yazid","n":"يزيد المصري","g":1,"l":"masri","r":"خازن وكالة الوراق","sp":"فرجة الصياد (بائعة السمك)","bio":"إسكندري أهلك الوباء أهله فجاء القاهرة قبيل الحملة الفرنسية بأيام. سكن بيت الغورية في ظل بوابة المتولي، وأصرّ على إدخال ولديه الكُتّاب. رأى سيدي نجم الدين في المنام فشيّد حوش الأسرة بجوار ضريحه، وما زال يستقبل راحلي الذرية. أنجب ذرية كثيرة لم يبقَ منها إلا عزيز وداود.","wh":"بيت الغورية"},{"id":"aziz","n":"عزيز يزيد المصري","g":2,"l":"masri","p":"yazid","r":"ناظر سبيل بين القصرين","sp":"نعمة عطا المراكيبي","spr":"nema","bio":"نجا من «مصيدة التعليم» حين اقتاد رجالُ محمد علي أخاه داود إلى المدارس الجديدة. سعى له الشيخ القليوبي في ديوان الأوقاف فصار ناظرًا للسبيل، واستبدل بالعمامة طربوشًا فلزمه لقب «عزيز أفندي». زوّجه أبوه من نعمة بنت الجار عطا، فلما أثرى عطا لم ينل هو ولا نعمة من ثرائه شيئًا. مات ساجدًا على سجادة الصلاة.","wh":"بيت الغورية"},{"id":"dawud","n":"داود يزيد المصري","g":2,"l":"dawud","p":"yazid","r":"داود باشا — طبيب بعثة فرنسا","sp":"سنية الوراق، ثم الجارية آدم","bio":"أخذته شرطة الوالي إلى ما وراء الأسوار ثم أُوفد إلى فرنسا («بلاد الكفار!» صاح أبوه)، فرجع طبيبًا محافظًا على صلاته وزيارة الحسين. رفضته أسرة تركية باعتباره «فلاحًا»، فتزوج سنية حفيدة الوراق وانتقل إلى بيت بالسيدة وبلغ رتبة الباشوية. ولما بلغ الخمسين عشق جارية سوداء وتزوجها فدهشت الأسرة. أيّد الثورة العرابية بقلبه، ورحل هو وعزيز في عامين متعاقبين فدُفنا جنبًا إلى جنب.","wh":"بيت السيدة"},{"id":"rashwana","n":"رشوانة","g":3,"l":"masri","p":"aziz","r":"بكرية عزيز ونعمة","sp":"المعلم صادق بركات — تاجر الدقيق بالخرنفش","bio":"زُفّت في الخامسة عشرة إلى بيت زوجها ببين القصرين. تأخر حملها ثم أنجبت دنانير وحدها. شُلّ زوجها في دكانه وصُفّيت تجارته فعاشت على القليل، ورفضت أن يُضحّى بابنتها من أجلها. ماتت بين ذراعي دنانير وهي تقدّم لها تفاحة العشاء.","wh":"بين القصرين"},{"id":"danani","n":"دنانير","g":4,"l":"masri","p":"rashwana","r":"معلّمة","bio":"أول بنات الأسرة تتجاوز الابتدائية، بتأييد أبيها التاجر واعتراض خالها محمود بك. دخلت مدرسة المعلمات يوم كان على المعلمة أن تختار بين الوظيفة والزواج، فاختارت العمل لتعول أمها. ردّت عرض ابن خالها لبيب بازدراء، ورفضت ناظر المدرسة، وصارت عانسًا إلى الأبد. رأت في يوليو انتقامًا من الجبارين، ثم عانت الوحدة والغلاء في الانفتاح.","wh":"بين القصرين","t":"وحيدة"},{"id":"amr","n":"عمرو أفندي","g":3,"l":"masri","p":"aziz","r":"موظف بنظارة المعارف","sp":"راضية معاوية القليوبي","spr":"radia","bio":"حكيم الأسرة الذي يُرجع إلى رأيه. اكتفى بالابتدائية، وسكن بيتًا حديثًا بميدان بيت القاضي خلف شجرة البلخ، ملاصقًا لبيت أخيه سرور. دمرداشي الطريقة، وفديّ الهوى، اشترك في إضراب الموظفين سنة ١٩١٩ ووزّع الشربات يوم المعاهدة. زوّج ابنه من آل داود وابنه الآخر من آل المراكيبي فضاعف حنق أخيه. أُغمي عليه في الكلوب المصري فحُمل إلى فراشه ومات على صدر راضية.","wh":"ميدان بيت القاضي"},{"id":"sorour","n":"سرور أفندي","g":3,"l":"masri","p":"aziz","r":"موظف بالسكك الحديدية","sp":"زينب عبد الحليم النجار «ست زينب»","bio":"دلّلته أمه فكسِل عن التعلم واكتفى بالابتدائية. حادّ اللسان لا يرحم: «لماذا ينسى آل عطا العظام المراكيبَ ودكان الصالحية؟ ولماذا ينسى آل داود عم يزيد وفرجة السماك؟». أدمن شراء أوراق اليانصيب، وحنق على أخيه لأن أبناءه تزوجوا من الفروع الثرية وتُركت بناته. مات بأزمة قلبية في أقل من دقيقة وهو جالس في المشربية، في العام الأخير من خدمته.","wh":"ميدان بيت القاضي"},{"id":"sadriya","n":"صدرية","g":4,"l":"masri","p":"amr","r":"كبرى ذرية عمرو — «نحلة آل عمرو»","sp":"حمادة القناوي — صعيدي من الأعيان","bio":"نابت عن أمها في تربية إخوتها، وفكّت الخط في الكُتّاب ثم رُدّت إلى الأمية لقلة الاستعمال. تزوجت قبل السادسة عشرة فكان ذهابها أول فراق في الأسرة. أنفقت حياتها في ترويض زوجها الثرثار، وقذفت جارةً بالماء ليلًا لأنها غازلته. زوّجت بناتها إلى قنا فقالت: «قضى عليّ بأن يفرق القطار بيني وبين بناتي». أغلقت بيتها في النهاية لترجع إلى أمها حتى أغمضت عينيها.","wh":"خان جعفر"},{"id":"nihad","n":"نهاد","g":5,"l":"masri","p":"sadriya","r":"«حرم العمدة»","sp":"عمدة من أقارب أبيها","bio":"طليعة الأحفاد فحظيت بمنزلة طيبة عند عمرو وراضية. خُطبت وهي تقارب الخامسة عشرة وانتقلت إلى الصعيد فتطبّعت بلهجة جديدة، وصارت تزور القاهرة كوافدة غريبة بجسمها المترامي وحليّها الذهبية. أنجبت عشرة، نصفهم ذكور.","wh":"الصعيد"},{"id":"aql","n":"عقل","g":5,"l":"masri","p":"sadriya","r":"مهندس ثم تاجر شقق","sp":"حكمت — أخت زوج أخته نهاد","bio":"ورث عيني أمه وأنف أبيه وقصره. عشق الدين والهندسة معًا فاستقر عمرًا في مقام الحيرة: «لم يستطع أن يؤمن ورفض أن يكفر ولاذ بالفرائض». تقدّم لابنة خالته هنومة فردّته لأنها أطول منه. تبيّن أنه عقيم فقالت له جدته راضية: «لا تصدق الأطباء». ربح في الانفتاح أموالًا طائلة من تجارة الشقق.","wh":"بين الجناين"},{"id":"warda","n":"وردة","g":5,"l":"masri","p":"sadriya","r":"«أجمل البنات وميزتها الأولى في العقل»","bio":"عشقت البيت القديم بميدان بيت القاضي وتعلّقت بجدتها راضية. خُطبت لابن عم أبيها وهي دون سن الزواج، فأصابتها الملاريا فماتت في عز شبابها، تاركة في قلب أمها جرحًا لا يندمل.","wh":"خان جعفر","t":"ماتت شابة"},{"id":"dalal","n":"دلال","g":5,"l":"masri","p":"sadriya","r":"صغرى بنات صدرية","sp":"زهران المراسيني — عمدة","bio":"لفتت نبرتها الصعيدية جدتها راضية: «كيف تسللت لذريتك القاهرية هذه النبرة؟». لم يسمح لها أبوها بأكثر من عامين في الكُتّاب. أجّلت مأساة أختها وردة زفافها عامًا، ثم انتقلت إلى قنا نهائيًا وأنجبت أربع بنات وثلاثة صبيان.","wh":"قنا"},{"id":"amer","n":"عامر","g":4,"l":"masri","p":"amr","r":"مدرّس — أول ذكور عمرو","sp":"عفت عبد العظيم داود","spr":"effat","bio":"ورث استقامة الأنف عن أمه وهدوء الطبع والتقوى عن أبيه. نشأ ميل متبادل بينه وبين عفت فوق السطح فتحوّل إلى زواج رحّب به عبد العظيم باشا: «عمرو ابن عمي ولا أعدل به أحدًا». شارك في مظاهرات ١٩١٩ ثم كتم وفديته بين آل داود. التهمت شخصية زوجته شخصيته الوديعة فصام رمضان وحده. صار اثنان من تلاميذه في مجلس قيادة ثورة يوليو. مات وهو يحادث عفت بعد اعتقال ابنه قدري بأيام.","wh":"بين الجناين"},{"id":"shaker","n":"شاكر","g":5,"l":"masri","p":"amer","r":"طبيب أمراض دم","sp":"راقصة هنغارية","bio":"أحبّ صفاء بنت عمته سميرة فمنعته أمه لأن آل عمرو «دون مستواها». أحبّ راقصة في ملاهي الهرم وتزوجها سرًّا وصارح أباه وحده. حقد على يوليو بعد ضياع الباشوية من آل داود فهاجر من مؤتمر طبي في شيكاغو، ورجع في منتصف الثمانينات بزوجته وأولاده يزور أهله «كضيف أجنبي» ثم عاد.","wh":"الولايات المتحدة"},{"id":"qadri","n":"قدري","g":5,"l":"masri","p":"amer","r":"مهندس يساري","bio":"شعلة في اللعب والجد والخيال، أسّس مكتبته في أولى الثانوية ووجد نفسه في اليسارية. قُبض عليه أول مرة فسعى جده عبد العظيم باشا للإفراج عنه بحجة حداثة سنه، ثم تكرر اعتقاله فتجنّب وظائف الحكومة. رفضه جيران لشكهم في إسلامه، وفشلت أمه في تزويجه من بنات خاله. اعتُقل في طوفان سبتمبر ١٩٨١ وأُفرج عنه، فمات أبوه بعدها بأيام.","wh":"بين الجناين"},{"id":"fayed","n":"فايد","g":5,"l":"masri","p":"amer","r":"مستشار بالقضاء","sp":"ماجدة العرشي","bio":"كثير الشبه بجدته فريدة حسام في بياض البشرة. عشق القانون والمجد القضائي، وعُيّن في النيابة فور تخرجه وترقى حتى المستشارية. أيّد يوليو ثم السادات في حربه، ولعنه بسبب الانفتاح والنكسة الديمقراطية، ولم يحزن على اغتياله. الوحيد من أبناء عامر الذي لم يكدّر صفو أبويه.","wh":"مصر الجديدة"},{"id":"farida2","n":"فريدة فايد","g":6,"l":"masri","p":"fayed","r":"كيميائية","bio":"بنت فايد الوحيدة، سمّتها جدتها عفت باسم أمها فريدة هانم حسام.","wh":"مصر الجديدة"},{"id":"matariya","n":"مطرية","g":4,"l":"masri","p":"amr","r":"قمة جمال الأسرة","sp":"محمد أفندي إبراهيم — مدرّس","bio":"أشبه الجميع بخالتها المنتحرة صديقة. أحبها لطفي بن عبد العظيم باشا فوأد آل داود الأمر باعتباره «زلة ذوق»، فتفجّر غضب أبيها وصبّت أمها لعناتها. أحبت أخاها قاسم كأبنائها فأهدته ابنها أحمد ليؤنس وحدته. ماتت بالسرطان في الستين، أول الراحلين من جيلها، بعد موت بكرها وترمّلها المبكر وخيبتها في زواج شاذلي.","wh":"حارة الوطاويط"},{"id":"ahmadmi","n":"أحمد محمد إبراهيم","g":5,"l":"masri","p":"matariya","r":"«الجميل ابن الجميلة»","bio":"حُمل وهو ابن أربعة أعوام إلى بيت جده بميدان بيت القاضي ليؤنس وحدة خاله قاسم الذي يكبره بعام ونصف. مات في الخامسة بحمى شديدة بعد أن عجز البخور والتعاويذ ثم الدكتور عبد اللطيف، فحزن عليه قاسم حزنًا لا يتعزى، واهتزت في عينيه صورة جده العاجز عن دفع الموت.","wh":"بيت القاضي","t":"مات طفلًا"},{"id":"shazli","n":"شاذلي","g":5,"l":"masri","p":"matariya","r":"مدرّس علوم","sp":"سهير — ممرضة","bio":"حلّ محل أخيه الراحل في زمالة خاله قاسم دون أن يبلغ منزلته الأسطورية. خفيف الروح، حاور طه حسين والعقاد وسلامة موسى في قراءاته، ورفض بنات خالاته: «سأتزوج بالأسلوب الذي أقتنع به». أحبّ الممرضة التي جيء بها لحقن جده المحتضر فتزوجها رغم اعتراض أمه. مات له خمسة في سن الرضاعة، ونجا محمد وحده فاستُشهد ضابطًا.","wh":"شارع أبو خودة"},{"id":"mohshazli","n":"محمد شاذلي","g":6,"l":"masri","p":"shazli","r":"ضابط بالجيش","bio":"الناجي الوحيد من ذرية شاذلي؛ دعت له جدته مطرية وتوسلت إلى راضية أن تحميه، ثم استُشهد في العدوان الثلاثي فحزن عليه أبوه حزنًا لم يبرأ منه.","wh":"القاهرة","t":"استُشهد"},{"id":"amana","n":"أمانة","g":5,"l":"masri","p":"matariya","r":"حصلت على البكالوريا وتفوقت في الرياضيات","sp":"عبد الرحمن أفندي أمين — موظف بدار الكتب","bio":"وُلدت قبيل وفاة أخيها أحمد بأشهر فكانت صورة جديدة لأمها. أرادت الجامعة فمات أبوها فتزوجت رجلًا يكبرها بخمسة عشر عامًا، ودام النقار بينهما حتى أنجبت بكرها. نصحتها ابنة عمها جميلة: «على الزوجة أن تكون مروضة للوحوش».","wh":"شارع الأزهر"},{"id":"mohamin","n":"محمد","g":6,"l":"masri","p":"amana","r":"بكر أمانة","bio":"من أول جيل تعلّم في ظل ثورة يوليو، غرق جيله في بحر الحيرة بعد ٥ يونيه، وفاز بعقد عمل في البلاد العربية في موجة الانفتاح.","wh":"الخليج"},{"id":"amramin","n":"عمرو","g":6,"l":"masri","p":"amana","r":"سُمّي على جده لأمه","bio":"أحد أبناء أمانة الذين تعلّموا مع أول جيل للثورة ثم سافروا للعمل في البلاد العربية.","wh":"الخليج"},{"id":"sorouramin","n":"سرور","g":6,"l":"masri","p":"amana","r":"من ذرية أمانة","bio":"ثالث أبناء أمانة؛ لحق بإخوته إلى عقود العمل في البلاد العربية.","wh":"الخليج"},{"id":"hadiya","n":"هدية","g":6,"l":"masri","p":"amana","r":"مدرّسة","sp":"سليم حسين قابيل","spr":"salim","bio":"صغرى ذرية أمانة، تمتّ بجمالها إلى جمال جدتها مطرية. درّست في الخليج عامين واشترت شقة بمنشية البكري، فخطبتها سميرة لابنها سليم واستقر بها. جرفها تيار زوجها الديني حتى قالت: «كنت ضالة فهُديت والحمد لله».","wh":"منشية البكري"},{"id":"samira","n":"سميرة","g":4,"l":"masri","p":"amr","r":"«بنت من بنات الفرنجة» بتعبير محمود بك","sp":"حسين قابيل — تاجر تحف بخان الخليلي","bio":"الثانية في الجمال بعد مطرية، وأرزنهنّ عقلًا، الوحيدة التي واظبت على قراءة الصحف. زُفّت إلى شقة في عمارة جديدة بشارع ابن خلدون، فخالطت أسرًا يهودية وتعلمت البيانو وربّت كلبة تصحبها في حديقة الظاهر بيبرس. قالت من أول يوم: «سنعلّم البنات كالصبيان». مات زوجها بعد مولد سليم بعام فدبّرت أمرها من مخزن التحف، وفقدت بدرية وحكيم وأسرته.","wh":"شارع ابن خلدون"},{"id":"badriya","n":"بدرية","g":5,"l":"masri","p":"samira","r":"بكرية سميرة","bio":"عذبة الملامح ناضجة قبل أوانها. بعد الخامسة عشرة صُرعت وهي في الشرفة مع أمها صرعًا عنيفًا، فانقطعت عن المدرسة وتدهورت حالها رغم الأطباء وبخور راضية، وماتت ضحى بعد أن رأت في نومها «أميرًا يدعوني إلى نزهة في القناطر».","wh":"شارع ابن خلدون","t":"ماتت شابة"},{"id":"safaa","n":"صفاء","g":5,"l":"masri","p":"samira","r":"مترجمة ثم مدير عام","sp":"صبري بك القاضي — وكيل وزارة","bio":"أوفر بنات سميرة جمالًا ومرحًا، تخرجت في الآداب قسم اللغة الإنجليزية. أحبها ابن خالها شاكر سرًّا فقطعت العلاقة بازدراء حين صارحت عفتُ أمَّها، فذكّرتها سميرة بما جرى قديمًا لخالتها مطرية. تزوجت رجلًا يكبرها بعشرين عامًا وأشرفت بنفسها على تربية ولديها حتى التحقا بالسلك السياسي.","wh":"حدائق القبة"},{"id":"ali","n":"علي","g":6,"l":"masri","p":"safaa","r":"دبلوماسي","bio":"أحد ولدَي صفاء اللذين أشرفت على تربيتهما حتى دخلا السلك السياسي.","wh":"حدائق القبة"},{"id":"amrq","n":"عمرو","g":6,"l":"masri","p":"safaa","r":"دبلوماسي","bio":"ابن صفاء الثاني، سُمّي على جده لأمه عمرو أفندي، والتحق مثل أخيه بالسلك السياسي.","wh":"حدائق القبة"},{"id":"hakim","n":"حكيم","g":5,"l":"masri","p":"samira","r":"عضو مجلس أمة — من رجال يوليو","sp":"سنية كرم","bio":"ولع بالمقامرة صغيرًا ولم يؤمن بالأحزاب: «نريد شيئًا جديدًا». صديق حميم لضابط صار من نجوم يوليو، فوثب مرتبه من العشرات إلى المئات وأعان خاله حامد وابن خالته نادر وخفّف عن أخيه سليم قبل سجنه. سقط بعد ٥ يونيه مع سقوط صديقه، فأصابه ضغط الدم الخبيث. استُشهد ابناه، فانفجر الضغط فقتله.","wh":"العباسية"},{"id":"husq","n":"حسين","g":6,"l":"masri","p":"hakim","r":"ضابط بسلاح الفرسان","bio":"سُمّي على جده حسين قابيل، واستُشهد في الميدان في حرب أكتوبر ١٩٧٣ بعد أخيه.","wh":"سيناء","t":"استُشهد"},{"id":"amrh","n":"عمرو","g":6,"l":"masri","p":"hakim","r":"ضابط بسلاح الفرسان","bio":"سُمّي على جده لأمه عمرو أفندي، واستُشهد في حرب الاستنزاف.","wh":"سيناء","t":"استُشهد"},{"id":"farouq","n":"فاروق","g":5,"l":"masri","p":"samira","r":"جرّاح صاحب عيادة","sp":"الدكتورة عقيلة ثابت","bio":"حلم منذ الصغر بالطب فحققه ونال الدكتوراه وأحرز منزلة فريدة كجرّاح. توزّع قلبه بين الحماس ليوليو مع أخيه حكيم والنفور منها حبًّا في أخيه سليم المسجون، فتجنّب الجهر برأيه. لم تتجاوز تسعيرة أتعابه حدود المعقول أبدًا. قال لخاله عامر: «ولي السادات نيابة عن عبد الناصر ثم قُتل كذلك نيابة عنه!».","wh":"مصر الجديدة"},{"id":"hanuma","n":"هنومة","g":5,"l":"masri","p":"samira","r":"مذيعة بالإذاعة","sp":"نادر عارف المنياوي","spr":"nader","bio":"على طراز أمها في الجمال، شديدة الشبه بأخيها سليم في التمسك بالمبادئ. تخرجت في قسم اللغة الفرنسية والتحقت بالإذاعة، وتحمّست ليوليو ثم انقلبت عليها بعد سجن سليم. ردّت ابن خالتها عقل لقصره، وقبلت نادر لمركزه ووسامته، فلما انكشف انحرافه ثارت عليه وانتهى الأمر بالطلاق رغم نصح أمها: «هل أصبحت الحياة الشريفة مستحيلة حقًا؟».","wh":"الزمالك"},{"id":"samiran","n":"سميرة","g":6,"l":"masri","p":"nader","r":"من بنات نادر وهنومة","bio":"نشأت في شقة الزمالك مع أمها بعد الطلاق وربّتها على مثالها، واشترى لها أبوها شقة وجهّزها عند الزواج.","wh":"الزمالك"},{"id":"radian","n":"راضية","g":6,"l":"masri","p":"nader","r":"من بنات نادر وهنومة","bio":"سُمّيت على جدة الأسرة الكبرى؛ نشأت مع أختيها في كنف أمها بعد الطلاق.","wh":"الزمالك"},{"id":"safaan","n":"صفاء","g":6,"l":"masri","p":"nader","r":"من بنات نادر وهنومة","bio":"صغرى بنات نادر وهنومة، جهّزها أبوها كأختيها بشقة عند الزواج.","wh":"الزمالك"},{"id":"salim","n":"سليم","g":5,"l":"masri","p":"samira","r":"محامٍ وكاتب دعوة","sp":"هدية عبد الرحمن أمين","spr":"hadiya","bio":"وسيم كأمه، فارع كأبيه، كبير الرأس كأخيه حكيم. عدّته أخته هنومة بتدينها، ورحّب بيوليو وهو في الثانوية ثم انضم للإخوان، فاتُّهم في القضية الكبرى وحُكم عليه بعشر سنوات وخرج قبل ٥ يونيه بعام. ألّف «العصر الذهبي للإسلام» و«أهل العزم والتقوى»، ورُمي في السجن ثانيةً بعد قرارات سبتمبر ١٩٨١. قال لابن خالته شاذلي: «حيرتك مستوردة».","wh":"منشية البكري"},{"id":"habiba","n":"حبيبة","g":4,"l":"masri","p":"amr","r":"«النائحة» — تبكي على كل راحل","sp":"الشيخ عارف المنياوي — مدرّس لغة عربية","bio":"كادت تماثل سميرة جمالًا لولا سحابة تعلو عينها اليسرى. خُطبت في السادسة عشرة وزُفّت إلى الدرب الأحمر، فأنجبت نادر بعد عام ومات زوجها بالسرطان بعد عام ثانٍ، فصارت أرملة دون العشرين ورفضت كل فرصة زواج من أجل ابنها. أبت أن تهجر الدرب الأحمر بعد ثراء ابنها تمسكًا ببركات الحي وقربًا من أمها. كانت آخر من مات من آل عمرو، «ولما ماتت لم تجد من يبكي عليها».","wh":"الدرب الأحمر"},{"id":"nader","n":"نادر المنياوي","g":5,"l":"masri","p":"habiba","r":"رئيس مجلس إدارة ثم مستورد","sp":"هنومة حسين قابيل، ثم أرملة أسترالية","bio":"ربّته أمه الأرملة وحدها. تعلّم الإنجليزية والآلة الكاتبة والتحق بشركة إنجليزية للمعادن، ورقّاه ابن خالته حكيم إلى رئاسة مجلس الإدارة. انكشف انحرافه بعد ١٩٦٧ فأُحيل إلى المعاش بشفاعة حكيم، وطلّقته هنومة. أثرى في الانفتاح من الاستيراد، وتزوج أرملة أسترالية وأقام في فيلا بالمعادي، واشترى لكل بنت من بناته شقة.","wh":"الزمالك ثم المعادي"},{"id":"hamed","n":"حامد","g":4,"l":"masri","p":"amr","r":"ضابط شرطة","sp":"شكيرة محمود عطا، ثم عصمت الأورفلي","spr":"shakira","bio":"ضخم الجسم محب للعراك، أتعب أباه في تربيته أكثر من ذريته كلها. دخل مدرسة الشرطة بنصيحة خاله محمود، واتُّهم في ثورة ١٩١٩ بالتحريض على الإضراب فأُنزل سنة. أقام في جناح بسراي ميدان خيرت «حاسبًا لجبروت حميه»، وساءت معاملته لزوجته حتى صرخت: «إني أكرهك أكثر من الموت» فطلّقها. أحالته يوليو إلى المعاش فتوسّط له ابن أخته حكيم، ومات بسرطان الدم وهو يجهل مرضه.","wh":"ميدان خيرت ثم المنيل"},{"id":"wahida","n":"وحيدة","g":5,"l":"masri","p":"hamed","r":"طبيبة","sp":"زميل باكستاني","bio":"ذكية جميلة القلب غالتها رياح النكد: تشرّب قلبها الكآبة في مناخ الحياة الزوجية المسموم بين أبويها، وترسّب النفور من أبيها في أعماقها، ولم تجد في أخيها صالح عزاء. التحقت بكلية الطب على مثال خالتها نادرة، ثم سافرت للعمل في السعودية «هاربة»، وفاجأت أمها برسالة تنبئها بزواجها.","wh":"السعودية"},{"id":"saleh","n":"صالح","g":5,"l":"masri","p":"hamed","r":"صاحب مزرعة ببني سويف","sp":"جلفدان — من قريبات جدته نازلي","bio":"ارتبط بأمه أكثر من أبيه وأدانه: «إنه يظلم ماما يا عمي». متشدد في الحكم بالقرآن والسنة، أحبّ الإخوان دون أن ينخرط فيهم، وأدان ولاء آل المراكيبي للملك ونفر من آل أبيه وآمن مع أمه بأن جدته راضية مخبولة. أقام مزرعة حديثة على أرض أمه، وربّى العجول وأنشأ منحلًا، وسمّى القاهرة «مدينة العذاب».","wh":"بني سويف"},{"id":"qasim","n":"قاسم — «الشيخ قاسم»","g":4,"l":"masri","p":"amr","r":"آخر عنقود عمرو وراضية","sp":"بهيجة سرور","spr":"bahiga","bio":"الوحيد من الأبناء الذي لم يبارح البيت القديم. أخلص المستمعين لأمه وأصدق التابعين لها في جولاتها الروحية. أُغمي عليه بعد تبخيرها فقرر الطبيب «صرعًا خفيفًا» وقالت هي بيقين: «بل هو اتصال بأهل الغيب». بدّل ملابسه الإفرنجية بالجلباب والعمامة وأرسل لحيته، وقصده أصحاب الآمال بالهدايا ثم النقود حتى فاق رزقه رزق أخويه. تزوج ابنة عمه في ليلة غارة جوية سنة ١٩٤١.","wh":"ميدان بيت القاضي"},{"id":"naqsh","n":"النقشبندي","g":5,"l":"masri","p":"qasim","r":"مهندس — دكتوراه من ألمانيا","sp":"سيدة ألمانية","bio":"جاء بعد سنوات عقم بوعدٍ من أبيه: «ستنجبين ذكرًا عندما يرضى القمر». تخرج مهندسًا عام النكسة وسافر في بعثة إلى ألمانيا الغربية مهيض الجناح، فقرر الهجرة نهائيًا وتجنّس. ودّعه أبوه مرتين بالعبارة نفسها: «الله معك، إني أودعك بلا دموع».","wh":"ألمانيا الغربية"},{"id":"labib","n":"لبيب","g":4,"l":"masri","p":"sorour","r":"رئيس محكمة استئناف الإسكندرية","sp":"مطربة سابقة عرفها في شبابه","bio":"«صاحب العقل الكامل» كما سمّته راضية: الابتدائية في العاشرة والبكالوريا في السادسة عشرة والليسانس في الثامنة عشرة ضمن العشرة الأوائل، فأبت النيابة تعيين معاون قاصر. أجّل الزواج ليزوّج أخواته فانطلقت غرائزه المكبوحة إلى الخمر والنساء. تزوج في آخر العمر وحجّ، ثم استهلكت الخمر كبده فمات بنزيف قبيل هزيمة يونيه بأشهر.","wh":"الإسكندرية"},{"id":"gamila","n":"جميلة","g":4,"l":"masri","p":"sorour","r":"أجمل من رآه ميدان بيت القاضي بعد مطرية","sp":"إبراهيم الأسواني — عضو مجلس النواب","bio":"عبثت بابن عمها قاسم في صباها فضبطتهما راضية على السطح. عولجت من عقمها فأنجبت خمسة ذكور عاش منهم اثنان، وحوّلها الزواج من الرعونة إلى رزانة عجيبة. فقدت ولديها الطيارين في حربين، ثم ماتت بسرطان المعدة «كأنها مقطوعة من شجرة لا أهل لها».","wh":"أسوان"},{"id":"sorourasw","n":"سرور الأسواني","g":5,"l":"masri","p":"gamila","r":"ضابط طيار","bio":"سُمّي على جده سرور أفندي؛ أُصيبت طائرته في حرب ١٩٥٦ فلقي مصرعه.","wh":"أسوان","t":"استُشهد"},{"id":"mohasw","n":"محمد الأسواني","g":5,"l":"masri","p":"gamila","r":"ضابط طيار","bio":"لحق بأخيه سرور فقُتل في حرب ١٩٦٧، «وانقرضت هذه الأسرة بقضاء لا رادّ له».","wh":"أسوان","t":"استُشهد"},{"id":"bahiga","n":"بهيجة","g":4,"l":"masri","p":"sorour","r":"زوجة ابن عمها قاسم","sp":"قاسم عمرو","spr":"qasim","bio":"ورثت عن أمها وجهًا في هالة بيضاء وعينين خضراوين، ومن أبيها صوته الدسم. أحبت قاسم فمنعتها أمها لتماثل السن، فلما حلّ به ما حلّ تلقت الطعنة في صمت وطال انتظارها حتى قاربت الثلاثين وحيدة في البيت القديم. ثم طلبها فتزوجا في ليلة غارة جوية، «قيل إنه اليأس وقيل إنه الحب القديم»، وأنجبت النقشبندي بعد سنوات عقم وحزنت على هجرته حزنًا شديدًا.","wh":"ميدان بيت القاضي"},{"id":"amir","n":"أمير","g":4,"l":"masri","p":"sorour","r":"طالب وفدي","bio":"أشبه الجميع بعمه عمرو في رجولته وتقواه، تعصّب دينيًّا حتى خاصم أخته جميلة على تحررها. أصابته هراوة في مظاهرات الاحتجاج على دكتاتورية محمد محمود فلبث أسبوعين في المستشفى، وتألق في أوساط الشباب الوفدي، ثم قُتل برصاصة في مظاهرة ضد إلغاء دستور ١٩٢٣، ولم يُسمح بشهود دفنه إلا لأبيه وعمه وإخوته منعًا لمظاهرة جديدة.","wh":"ميدان بيت القاضي","t":"قُتل في مظاهرة"},{"id":"hazem","n":"حازم","g":4,"l":"masri","p":"sorour","r":"مهندس — صاحب ملايين في الانفتاح","sp":"سميحة محمد سلامة — كريمة أستاذه","bio":"نشأ عزوفًا متوحدًا حتى قال عنه عمه: «ابنك حازم عدو للبشر». ضعف عينه اليسرى بلغ بها العمى فمنعته الحكومة، فالتحق بشركة مقاولات أستاذه وتزوج ابنته وحلّ محله بعد وفاته. أُممت الشركة ثم فتح في عهد السادات مكتبًا هندسيًّا وبات من أصحاب الملايين. قطعت زوجته صلته بأهله حين رفضت الذهاب إلى ميدان بيت القاضي «الملىء بالحشرات».","wh":"فيلا الدقي"},{"id":"hosny","n":"حسني","g":5,"l":"masri","p":"hazem","r":"مهندس ثم منتج سينمائي","sp":"عجيبة — ممثلة","bio":"حطّم سدود أمه ورفض وساطتها في اختيار زوجة: «شكرًا لا حاجة بي إلى خاطبة». تزوج فنانة اشترطت ألا يطالبها بهجر حياتها الفنية، وأنشأ لها شركة إنتاج وأنتج فيلمين بلا أثر. ضبطها مع ممثل في شقة مفروشة بالعجوزة فقتلها ضربًا، وحُكم عليه بخمسة عشر عامًا. عرف الأقارب الخبر من الصحف: «يا ألطاف الله، إنه ابن حازم بن سرور أفندي!».","wh":"شارع الهرم","t":"سُجن"},{"id":"adham","n":"أدهم","g":5,"l":"masri","p":"hazem","r":"مهندس معماري","sp":"كريمة محمد فوزي","bio":"وسيم كأبيه وضعيف العين اليسرى مثله، وجد مكتب أبيه الهندسي في انتظاره. اختار زوجته بنفسه وأعلن ذلك في حديقة مينا هاوس. لا يعرف من شجرة أهله إلا فرع أمه: يعرف عابرًا أن جده سرور أفندي كان موظفًا بالسكك الحديدية، وأن له عمّات لم يرَ أحدًا منهن، وأن أسرته من حي الحسين الذي يقرنه بالفقر والتأخر.","wh":"المعادي"},{"id":"zina","n":"زينة","g":4,"l":"masri","p":"sorour","r":"صغرى بنات سرور","sp":"صبري المقلد — موظف بشركة كيماويات","bio":"حُجزت في البيت مبكرًا بعد فكّ الخط، وانتبهت قبل الجميع إلى «مناورات القلوب» بين أختها بهيجة وقاسم. قبلت عريسًا يكبرها بعشرين عامًا رغم شعورها بالذنب تجاه أختها: «تريد زوجًا بأي ثمن… وليكن الله مع بهيجة». ماتت ابنتها طفلة، وصدمها زواج ابنها من أرملة في مثل سنها، وقطع الزمن ما بينها وبين أهلها.","wh":"بين الجناين"},{"id":"khalil","n":"خليل المقلد","g":5,"l":"masri","p":"zina","r":"من رجال قضايا الحكومة","sp":"خيرية المهدي — أرملة جارة","bio":"أشبه الأحفاد بخاله لبيب، فائق الجمال الموروث عن جدته ست زينب. في ختام الثانوية نشأت علاقة بينه وبين جارة أرملة تكبره خمسة عشر عامًا فتزوجها رغم معارضة أمه، وحسمها خاله: «احمدي ربنا، العروس عمرها كبير ولكن مالها وفير». ماتت في الخمسين في جراحة كلوة فلم يفكر في الزواج ثانية.","wh":"بين الجناين"},{"id":"othman","n":"عثمان","g":6,"l":"masri","p":"khalil","r":"ابن خليل الوحيد","bio":"وُلد قبل أن ينال أبوه الليسانس، وهو الولد الوحيد لخيرية.","wh":"بين الجناين"},{"id":"amira","n":"أميرة","g":5,"l":"masri","p":"zina","r":"شقيقة خليل الصغرى","bio":"اقتبست من أمها أنفًا أفسد صفحة وجهها الحسن، ثم خطفها الموت صغيرة عقب نزلة معوية حادة، مخلّفة جرحًا غائرًا في قلب أمها الشابة.","wh":"بين الجناين","t":"ماتت طفلة"},{"id":"abdelazim","n":"عبد العظيم داود","g":3,"l":"dawud","p":"dawud","r":"باشا — رئيس محكمة الاستئناف العليا","sp":"فريدة هانم حسام","bio":"الابن الوحيد الباقي لداود باشا وسنية الوراق. أراده أبوه طبيبًا فاتجه إلى الحقوق «مدرسة الصفوة والوزراء» وتعيّن في النيابة دون وساطة. أول من اختار زوجته برؤية عينيه: لمح فريدة في حنطور فذهبت سنية وراضية ورشوانة يرفعن التقرير عنها. من أنصار حزب الأمة ثم عدلي بعد انقسام الجبهة، يسخر من وفدية ابن عمه عمرو ولا يؤمن بالاستقلال التام. شيّد لابنتيه بيتين ببين الجناين، ومات بعد يوليو وقد توغّل في الشيخوخة.","wh":"فيلا شارع السرايات — العباسية الشرقية"},{"id":"lotfy","n":"لطفي","g":4,"l":"dawud","p":"abdelazim","r":"باشا — طبيب ووكيل وزارة","sp":"آمال بهجت عمر","bio":"بكري عبد العظيم، صورة من أمه في الجمال وحظي بذكاء أبيه. هام بالحي العتيق وبأطوار راضية، وفُتن بمطرية بنت عمرو فنشأت قصة حب «فجّرت قنبلة» في فيللا آل داود فوُئدت. درس الطب وسافر في بعثة إلى ألمانيا ونال البكوية ثم الباشوية، وزوّجه عمرو من ابنة صديق صباه. ألغت يوليو باشويته، وخسر مدخراته في التأميم، ومات بسرطان المعدة في السبعين — «سنّ تُعتبر من الشباب في أسرة عبد العظيم المعمّرة».","wh":"فيلا الدقي"},{"id":"faridal","n":"فريدة لطفي","g":5,"l":"dawud","p":"lotfy","r":"زوجة رجل في السلك السياسي","bio":"عاشت عقب المراهقة في الخارج مع أختها وأخيها.","wh":"الخارج"},{"id":"mervat","n":"ميرفت","g":5,"l":"dawud","p":"lotfy","r":"زوجة رجل في السلك السياسي","bio":"غادرت مصر عقب المراهقة واستقرت في الخارج.","wh":"الخارج"},{"id":"dawudl","n":"داود لطفي","g":5,"l":"dawud","p":"lotfy","r":"طبيب في سويسرا","sp":"سيدة سويسرية","bio":"حمل اسم جد الأسرة داود باشا، وعاش طبيبًا في سويسرا وتزوج من أهلها.","wh":"سويسرا"},{"id":"ghassan","n":"غسان","g":4,"l":"dawud","p":"abdelazim","r":"بقضايا الحكومة — «عدو البشر»","bio":"الوحيد من أبناء عبد العظيم الذي لم يقتبس من أمه شيئًا: قصير نحيف غامق السمرة متجهم بلا صديق واحد. اجتهد وسهر فلم يظفر إلا بالنجاح العادي، ووجد في الحقوق قريبه لبيب محاطًا بهالة الإعجاب فضاعف ذلك كآبته. رفض الزواج رغم إلحاح أمه: «العقم هو العزاء المتبقي لنا!». صدمته يوليو وضياع رتب أسرته، وواصل حياته كالشبح بين الطعام والكتب والتليفزيون.","wh":"فيلا شارع السرايات"},{"id":"halim","n":"حليم","g":4,"l":"dawud","p":"abdelazim","r":"ضابط شرطة","bio":"صاحب صوت عذب ومزاح وعربدة: «لولا تقاليد الأسرة لكنت مطرب العصر». احتقر آل المراكيبي «من صلب رجل كان يبيع المراكيب»، وحاول إغواء قريباته لولا ثقل التقاليد. حرس الأميرات والوزراء وزيّن شقته بهداياهم. بعد يوليو كبس البوليس شقة قمار سري كان بها فقدّم استقالته، واستبدل بالويسكي الحشيش لرخصه، ومات ليلة استدعى فيها ابن عمه: «تعالَ أنت وعصمت هانم.. إني أحتضر».","wh":"شارع النيل"},{"id":"fahima","n":"فهيمة","g":4,"l":"dawud","p":"abdelazim","r":"«عاشقة الورد»","sp":"علي طلعت — مستشار بالاستئناف","bio":"أجمل ذرية عبد العظيم، فاقت أمها جمالًا وكانت أطيب قلبًا من أختها. فقدت ذريتها الثلاثة بعد اكتمال شبابهم، فبدأت تتساءل عن المصير واقتنت كتب تحضير الأرواح وآمنت أخيرًا براضية بعد أن كانت تسخر منها. مات زوجها بأنفلونزا حادة فعمّرت وحيدة بعد رحيل جيلها كله، فلم يبقَ لها إلا كلمة في التليفون مع شقيقتها عفت.","wh":"بين الجناين"},{"id":"dawudt","n":"داود علي طلعت","g":5,"l":"dawud","p":"fahima","r":"طالب بالحقوق","bio":"مات بالتيفود وهو في السنة الثالثة بكلية الحقوق.","wh":"بين الجناين","t":"مات شابًّا"},{"id":"abdazimt","n":"عبد العظيم علي طلعت","g":5,"l":"dawud","p":"fahima","r":"خريج كلية العلوم","bio":"مات بالكوليرا بعد تخرجه في العلوم بأشهر.","wh":"بين الجناين","t":"مات شابًّا"},{"id":"faridat","n":"فريدة علي طلعت","g":5,"l":"dawud","p":"fahima","r":"طالبة بالثانوية العامة","bio":"ماتت بروماتيزم القلب وهي في الثانوية العامة، آخر من فقدت فهيمة من ذريتها الثلاثة.","wh":"بين الجناين","t":"ماتت شابة"},{"id":"effat","n":"عفت","g":4,"l":"dawud","p":"abdelazim","r":"آخر ذرية عبد العظيم — خريجة الميردي دييه","sp":"عامر عمرو","spr":"amer","bio":"«إفرنجية ذوقًا وعقلًا وتراثًا»: تتقن الفرنسية والبيانو وتعرف عن فرنسا أكثر مما تعرف عن بلدها. شيّد لها أبوها بيتًا جميلًا ببين الجناين بحديقة فيها تكعيبة عنب وشجرة جوافة. شخصية قوية التهمت شخصية زوجها الوديع. منعت ابنها شاكر من الزواج بابنة عمته لأن آل عمرو دون مستواها، ومقتت يوليو لإلغائها باشوية أخيها. مات عامر وهو يحادثها فاستقبلت حياة صامتة تعلوها كآبة دائمة.","wh":"بين الجناين"},{"id":"atta","n":"عطا المراكيبي","g":1,"l":"marakibi","r":"من دكان الصالحية إلى سرايات ميدان خيرت","sp":"سكينة بنت جلعاد المغاوري، ثم هدى الألوزي","bio":"يتيم التقطه جلعاد المغاوري صاحب دكان الصالحية وربّاه ثم زوّجه ابنته الوحيدة فورث الدكان. جار يزيد المصري في بيت الغورية وصديقه الذي خطب له فرجة السماك. ماتت سكينة بعد عام من زواج ابنتها فتزوج أرملة ثرية تقيم في البيت المواجه لدكانه، ووثب «من حضيض الفقر إلى ذروة الثراء»: اشترى أرضًا وشيّد السراي الكبرى وعزبة بني سويف. أوصى ابنه: «اعتبر العزبة وطنك».","wh":"سراي ميدان خيرت"},{"id":"nema","n":"نعمة عطا المراكيبي","g":2,"l":"marakibi","p":"atta","r":"بنت عطا من زوجته الأولى","sp":"عزيز يزيد المصري","spr":"aziz","bio":"ورثت عن أمها عينيها النجلاوين وشعرها الغزير وصحة لم تحظَ بها الأم. صدمها زواج أبيها من الأرملة الغنية وقبضُه يده عنها، فحلمت أن تسبق الأرملة أباها إلى الآخرة فيرث ابناها، فخاب رجاؤها إذ مات قبل زوجته، «ولحقت به الأرملة بعد أشهر» فورث محمود وأحمد كل شيء. عوّضها برّ أخويها بها وبأولادها، وامتد بها العمر حتى رأت أحفادها.","wh":"بيت الغورية"},{"id":"mahmud","n":"محمود بك عطا","g":2,"l":"marakibi","p":"atta","r":"«الجد الجبار» — صاحب السراي والعزبة","sp":"نازلي بكري العرشي","bio":"أول ثمرة زواج عطا من الأرملة الثرية، نشأ بين سراي ميدان خيرت وسراي بني سويف ولم يعلم شيئًا عن حياة أبيه الأولى. اكتفى بالابتدائية ولازم أباه في العمل، وفرض سطوته على السراي بما فيها أسرة أخيه واستأثر بإدارة الأرض. تبرع لثورة ١٩١٩ بآلاف الجنيهات ثم والى العرش فنال البيكوية. بصق في وجه ابن أخيه عدنان فانقسمت الأسرة جبهتين، ولم يصالح أخاه إلا على فراش الموت.","wh":"سراي ميدان خيرت"},{"id":"ahmadb","n":"أحمد بك عطا","g":2,"l":"marakibi","p":"atta","r":"«الوديع الدمث»","sp":"فوزية بكري العرشي","bio":"خاب فيه أمل أبيه فتركه «لحياته الوادعة»، وسلّم إدارة أرضه لأخيه حتى ألحّ عليه ابنه عدنان فاستردّها وهو جاهل بكل شيء. تعرّض لخصام مزّق وحدة الأسرة سنين. أصابه الفالج قبيل الحرب العظمى الثانية فحُمل إلى فراشه بالقاهرة، وصالحه محمود قبل وفاته بساعات، وكان «أول من هوى من الجيل الثاني».","wh":"سراي ميدان خيرت"},{"id":"hassanm","n":"حسن محمود","g":3,"l":"marakibi","p":"mahmud","r":"لواء شرطة","sp":"زبيدة — من أسرة أمه","bio":"اشتهر بالعنف في تفريق المظاهرات فهاجمته الصحف الوفدية وزكّته عند السراي والإنجليز فنال ترقيات استثنائية، وقال عنه سرور أفندي: «خائن وابن مراكيبي!». أُصيب في عهد صدقي بطوبة في رأسه. كان أعنف إخوته على آل عمه واعتدى على ابن عمه عدنان. أحالته يوليو إلى المعاش، فباع أرضه وأنشأ متجرًا في شارع شريف وشيّد قصرًا بالمهندسين، ثم انقلبت به المرسيدس في شارع الهرم واحترقت.","wh":"مدينة المهندسين","t":"مات في حادث"},{"id":"mahmudh","n":"محمود حسن","g":4,"l":"marakibi","p":"hassanm","r":"طبيب مهاجر","bio":"يُضرب به المثل في الجمال والذكاء، تربى في مدارس الثورة وتشبّع بفلسفتها، ثم زلزلته نكسة ١٩٦٧ فهاجر مع أخيه شريف إلى الولايات المتحدة بعد رحيل الزعيم.","wh":"الولايات المتحدة"},{"id":"sharif","n":"شريف حسن","g":4,"l":"marakibi","p":"hassanm","r":"طبيب مهاجر","bio":"هاجر مع أخيه محمود إلى الولايات المتحدة بعد ١٩٦٧ لبدء حياة علمية ناجحة.","wh":"الولايات المتحدة"},{"id":"omarh","n":"عمر حسن","g":4,"l":"marakibi","p":"hassanm","r":"طبيب","bio":"عمل بمستشفيات الحكومة ثم فاز بعقد عمل في السعودية.","wh":"السعودية"},{"id":"shakira","n":"شكيرة","g":3,"l":"marakibi","p":"mahmud","r":"كبرى بنات محمود بك","sp":"حامد عمرو","spr":"hamed","bio":"«صورة من أبيها في تكوينه الصلب ونسخة من أمها في التهذيب والورع»، لم يسمح لها أبوها بتجاوز الابتدائية وخطب لها ابن أخته بنفسه وقايةً من الانتهازيين. فتر زوجها عنها منذ شهر العسل وبدأ عراك دام سنين انتهى بالطلاق، واتُّهم سحر حماتها راضية بأنه وراء ذلك. بعد الطلاق استغرقها التدين وحجّت أكثر من مرة، وظلت تلعن حامدًا حتى بعد موته.","wh":"سراي ميدان خيرت"},{"id":"abdohm","n":"عبده محمود","g":3,"l":"marakibi","p":"mahmud","r":"ضابط بسلاح المهندسين — من الضباط الأحرار","sp":"جولستان من آل الماوردي (انتهى بالطلاق)","bio":"وسيم نجيب تلقّن الأخلاق والتدين على يد أمه، وتفوق في السباحة وعشق المطالعة. خرج عن خط الأسرة السياسي فلم يتشيّع للملك، وانضم إلى «الجيل القلق الغاضب». طُلّقت زوجته لأنه بخيل رغم يسره وهي محبة للبذخ، فقرر ألا يتزوج بقية عمره. صار بعد يوليو من رجال الصف الثاني وتولى رئاسة شركة المعادن، ثم أنشأ في الانفتاح مكتبًا هندسيًّا وأثرى ثراءً فاحشًا «ويقينه أنه يكتنز المال للآخرين».","wh":"سراي ميدان خيرت"},{"id":"nadira","n":"نادرة","g":3,"l":"marakibi","p":"mahmud","r":"أستاذة دكتورة في طب الولادة","bio":"دون إخوتها الذكور في الوسامة وعلى مثال أختها شكيرة في الخلق. أحبت ابن عمها مازن من المراهقة حتى آخر يوم في حياته ولم تنقطع صلتها به طوال أعوام الخصومة. بعد غرقه قضت عامًا أسيرة للكآبة ثم تخصصت ونالت الدكتوراه ونجحت نجاحًا مرموقًا، ورفضت كل فرص الزواج ولم تتزوج قط.","wh":"سراي ميدان خيرت"},{"id":"maher","n":"ماهر","g":3,"l":"marakibi","p":"mahmud","r":"ضابط بالحرس الخاص للزعيم","bio":"طويل رشيق وسيم ذو كبرياء طبقي، تخرج في الكلية الحربية مطلع الحرب العظمى الثانية وانتظم في الضباط الأحرار بتأثير أخيه. عُيّن بعد الثورة في الحرس الخاص للزعيم وظل حتى وفاته ثم أُحيل إلى المعاش. استأجر شقة في الزمالك لغرامياته ولم يتزوج قط. بعد الانفتاح باع أرضه واشتغل بالاستيراد وأثرى إثراءً عظيمًا.","wh":"الزمالك"},{"id":"adnan","n":"عدنان أحمد عطا","g":3,"l":"marakibi","p":"ahmadb","r":"زراعي — عضو مجلس الشعب","sp":"ست تهاني — أرملة من بنات البلد","bio":"أبوه وديع وأمه هانم جليلة، لكنه أشبه بعمه الجبار في الصلابة وحب السيطرة. تمرّد على وصاية عمه وانتزع الأرض لأبيه فاشتعل الخصام الذي قسم الأسرة. تزوج أرملة تكبره رغم جزع أمه وحملها إلى سراي العزبة. الوحيد في الأسرة الذي طُبّق عليه الإصلاح الزراعي، فكره الثورة وسعد بالنكسة، ثم عدّ الانفتاح «بابًا من أبواب الجنة» وربح من العجول والدجاج أرباحًا خيالية.","wh":"عزبة بني سويف"},{"id":"fouad","n":"فؤاد","g":4,"l":"marakibi","p":"adnan","r":"زراعي","bio":"نجح في أن يصير زراعيًّا كأبيه ويعاونه في إدارة العزبة.","wh":"بني سويف"},{"id":"farouqa","n":"فاروق عدنان","g":4,"l":"marakibi","p":"adnan","r":"لم يوفق في الدراسة","bio":"احترف الإجرام على الأسلوب الريفي حتى قُتل رميًا بالرصاص وهو يغادر المسجد عقب صلاة الجمعة.","wh":"بني سويف","t":"قُتل"},{"id":"mazin","n":"مازن أحمد عطا","g":3,"l":"marakibi","p":"ahmadb","r":"طالب بالزراعة","bio":"«ازدهرت في شخصه دماثة أبيه وجمال أمه»، وأحبّ ابنة عمه نادرة منذ الصباح ولم يعلنا الخطبة. سعى سرًّا لدى قريبه عمرو أفندي للتوفيق بين الشقيقين المتخاصمين، وقرر إعلان خطبته بعد انقضاء عام الحداد على أبيه. سافر في مطلع الربيع مع بعثة طلبة إلى الإسكندرية فغرق وهو يستحم في الشاطبي، فورثه أخوه فصار أثرى آل عطا.","wh":"الإسكندرية","t":"غرق"},{"id":"qalyubi","n":"الشيخ القليوبي","g":1,"l":"qalyubi","r":"مدرّس بالأزهر — ساكن سوق الزلط","bio":"ثالث أصدقاء قهوة الشربيني بالدرب الأحمر مع يزيد المصري وعطا المراكيبي، وكان يزيد أحب إليه من عطا. بارك إدخال عزيز الكُتّاب: «نِعم الرأي.. وبعد الكُتّاب إلى الأزهر»، وسعى له في ديوان الأوقاف حتى عُيّن ناظرًا للسبيل. شهد نابليون وثورتي القاهرة وولاية محمد علي ومذبحة المماليك، ثم تقاعد لكبره فحلّ ابنه محله.","wh":"سوق الزلط — باب الشعرية"},{"id":"muawiya","n":"الشيخ معاوية القليوبي","g":2,"l":"qalyubi","p":"qalyubi","r":"عالم أزهري — من رجال الثورة العرابية","sp":"جليلة الطرابيشية","bio":"نال العالمية وغرم بالنحو وحلّ محل أبيه في الأزهر. تحمّس للثورة العرابية فقُبض عليه بعد فشلها وحُكم عليه بالسجن خمسة أعوام، فطافت زوجته بالأضرحة ودبّرت شئون الأسرة بمال ورثته. خرج غريبًا حتى عمل بمدرسة أهلية، ولم يجد عينًا تنظر إليه بعطف سوى عين صديقه ناظر السبيل، فخطب ابنته الكبرى لابنه عمرو. مات قبل أن يشهد زفافها: وصل نيشان العروس يوم وفاته فأطلقت جليلة زغرودة ثم عادت تعوّل.","wh":"سوق الزلط"},{"id":"radia","n":"راضية","g":3,"l":"qalyubi","p":"muawiya","r":"«سيدة الأسرار الغيبية» — عمّرت فوق المائة","sp":"عمرو أفندي","spr":"amr","bio":"كبرى بنات الشيخ معاوية وأقواهنّ شخصية. ورثت عن أمها موسوعة الغيبيات والكرامات والطب الشعبي وقراءة الطالع فبرعت فيها أكثر من الجميع. خُطبت وهي في الرابعة عشرة وانتقلت إلى ميدان بيت القاضي. سجّلت سعد زغلول «وليًّا» جديدًا في قاموسها، ثم النحاس، ثم عبد الناصر. أشد ما رعبها وفاة عمرو ومأساة قاسم. ماتت وصدرية عند قدميها وهي تغني «عودي يا ليالي العز عودي».","wh":"ميدان بيت القاضي"},{"id":"shahira","n":"شهيرة","g":3,"l":"qalyubi","p":"muawiya","r":"«أم عبده» — صاحبة القطط","sp":"الشيخ علي بلال — قارئ ثم مطرب","bio":"تشبه راضية جسمًا ووجهًا وتفوقها في العنف وسلاطة اللسان. زُفّت إلى أحد تلاميذ أبيها من قراء القرآن، فتحوّل إلى الغناء وسجّل أسطوانات رائجة وأدمن الحشيش والخمر وعزم على تطليقها، فمات بسكتة قلبية في مجلس أنس قبل أن ينفذ. مات ابنها صغيرًا فعادت إلى بيت أمها، وولعت بتربية القطط وزعمت أنها خبيرة بلغتها تتصل بها بعالم الغيب. أصابها وباء الكوليرا سنة ١٩٤٧ فماتت مخلّفة نحو أربعين قطة.","wh":"سوق الزلط"},{"id":"abdobilal","n":"عبده علي بلال","g":4,"l":"qalyubi","p":"shahira","r":"سُمّي تيمنًا بعبده الحامولي","bio":"جميل الصورة، «انخطف في حمى كحلم» فمات صغيرًا، وبقي لقب أمه «أم عبده» يلازمها إلى آخر عمرها.","wh":"باب البحر","t":"مات طفلًا"},{"id":"siddiqa","n":"صديقة","g":3,"l":"qalyubi","p":"muawiya","r":"أجمل بنات الشيخ معاوية","sp":"طبيب أسنان شامي","bio":"وُلدت بعد سجن أبيها بنصف عام، ونشأت ثمرة خالصة لتراث أمها: عذبة المعاملة محبّة للغناء. تزوجت وأقامت بعمارة جديدة بالفجالة، فمات زوجها قبل أن تحبل ومرضت بالسل فرجعت إلى حضن أمها، ثم يئست فرمت بنفسها في بئر البيت فانتُشلت في الرمق الأخير وماتت قبيل الفجر. غطّت جليلة البئر بعدها بغطاء خشبي، وكانت تراها في المنام.","wh":"سوق الزلط","t":"انتحرت"},{"id":"balegh","n":"بليغ","g":3,"l":"qalyubi","p":"muawiya","r":"تاجر جملة — صاحب «عابدين القبيسي»","sp":"أمينة الفنجري","bio":"آخر عنقود الشيخ معاوية، أُلحق بالأزهر مبكرًا فأدمن الخمر بعد وفاة أبيه وطُرد دون أن ينال العالمية. باع أرضًا نزلت له عنها أمه واشتغل ببقالة الجملة يجلب الجبن والسمن من قليوب، فأثرى في الحرب الأولى وبلغ غاية الثراء في الثانية وشيّد سرايا عُرفت باسمه. ظل مدمنًا مع محافظته على صلاته وصومه وزكاته، حتى أصابه تليف الكبد فلزم الفراش نصف عام.","wh":"القبيسي"},{"id":"ibnbalegh","n":"ابن بليغ","g":4,"l":"qalyubi","p":"balegh","r":"من كبار القضاة","bio":"الولد الوحيد لبليغ وأمينة الفنجري؛ امتد عمر أبيه حتى رآه في منزلة كبار القضاة.","wh":"القاهرة"}],"M":[["aziz","nema"],["amr","radia"],["amer","effat"],["hamed","shakira"],["qasim","bahiga"],["salim","hadiya"],["nader","hanuma"]],"A":{"yazid":"أحمد ماهر","aziz":"توفيق عبدالحميد","dawud":"خالد النبوي","rashwana":"مها أحمد","danani":"نيللي كريم","amr":"إبراهيم يسري","sorour":"أحمد صيام","sadriya":"ريهام عبدالغفور","amer":"مجدي كامل","matariya":"حنان مطاوع","samira":"علا غانم","habiba":"مروة عبدالمنعم","hamed":"أحمد الفيشاوي","qasim":"وحيد أسامة","naqsh":"عمرو واكد","labib":"مجدي بدر","gamila":"شيماء عقيد","abdelazim":"طارق لطفي","lotfy":"أحمد سعيد عبدالغني","ghassan":"خالد عبدالغفار","atta":"أحمد خليل","nema":"دلال عبدالعزيز","mahmud":"محمد نجاتي","ahmadb":"أحمد زاهر","hassanm":"سيف الله","shakira":"منة شلبي","adnan":"محمد أحمد ماهر","mazin":"شادي الدالي","qalyubi":"محمد السبع","muawiya":"محمود الجندي","radia":"سلوى خطاب","shahira":"سلمى غريب","abdobilal":"محمد العدل","siddiqa":"إيمان فريد","balegh":"أحمد رزق","nadira":"سلمى السمري"}};
+const P = DB.P, MARR = DB.M, ACT = DB.A;
 const LINES = {
-  masri:{label:"آل يزيد المصري",v:"--masri"},
-  dawud:{label:"آل داود",v:"--dawud"},
-  marakibi:{label:"آل المراكيبي",v:"--marakibi"},
-  qalyubi:{label:"آل القليوبي",v:"--qalyubi"}
+  masri:{n:"آل يزيد المصري",c:"var(--masri)",x:"#53B7C7"},
+  dawud:{n:"آل داود",c:"var(--dawud)",x:"#7FA3E0"},
+  marakibi:{n:"آل المراكيبي",c:"var(--marakibi)",x:"#D79B45"},
+  qalyubi:{n:"آل القليوبي",c:"var(--qalyubi)",x:"#D2788E"}
 };
-const GENS = [
- "الجيل الأول · الحملة الفرنسية ومحمد علي",
- "الجيل الثاني · عصر إسماعيل والثورة العرابية",
- "الجيل الثالث · الاحتلال وثورة ١٩١٩",
- "الجيل الرابع · ما بين الحربين",
- "الجيل الخامس · يوليو والنكسة",
- "الجيل السادس · الانفتاح والهجرة"
+
+/* ---------- الختم النجمي: رسم أصلي يُشتق من الاسم، لا صورة لأحد ---------- */
+function hash32(str){ let h=2166136261>>>0;
+  for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,16777619)>>>0; } return h>>>0; }
+function mkRng(seed){ let v=seed>>>0;
+  return function(){ v=(Math.imul(v,1664525)+1013904223)>>>0; return v/4294967296; }; }
+function medal(p,size){
+  const seed=hash32(p.id+'|'+p.n+'|'+p.g), r=mkRng(seed), col=LINES[p.l].x;
+  const uid='sg'+seed.toString(36);
+  const n=4+Math.floor(r()*3), pts=[];
+  for(let i=0;i<n;i++){
+    const a=(i/n)*Math.PI*2+(r()-0.5)*0.85, rad=27+r()*20;
+    pts.push([50+Math.cos(a)*rad, 50+Math.sin(a)*rad, 1.6+r()*1.9]);
+  }
+  let d='M'+pts[0][0].toFixed(1)+' '+pts[0][1].toFixed(1);
+  for(let i=1;i<n;i++) d+='L'+pts[i][0].toFixed(1)+' '+pts[i][1].toFixed(1);
+  if(r()>0.42) d+='Z';
+  let stars='';
+  for(const s of pts) stars+='<circle cx="'+s[0].toFixed(1)+'" cy="'+s[1].toFixed(1)+'" r="'+s[2].toFixed(1)+'" fill="#F6F0E4"/>';
+  const letter=(p.n||'').trim().charAt(0);
+  const ring=(r()*360).toFixed(0);
+  return '<svg class="medal" width="'+size+'" height="'+size+'" viewBox="0 0 100 100" aria-hidden="true" focusable="false">'
+   +'<defs><radialGradient id="'+uid+'" cx="34%" cy="26%" r="78%">'
+   +'<stop offset="0" stop-color="'+col+'" stop-opacity=".34"/>'
+   +'<stop offset=".62" stop-color="'+col+'" stop-opacity=".10"/>'
+   +'<stop offset="1" stop-color="#090C11" stop-opacity=".96"/></radialGradient></defs>'
+   +'<circle cx="50" cy="50" r="47" fill="url(#'+uid+')"/>'
+   +'<text x="50" y="70" text-anchor="middle" font-family="Amiri,serif" font-weight="700" font-size="56" fill="'+col+'" opacity=".16">'+letter+'</text>'
+   +'<path d="'+d+'" fill="none" stroke="'+col+'" stroke-opacity=".55" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/>'
+   +stars
+   +'<circle cx="50" cy="50" r="47" fill="none" stroke="'+col+'" stroke-opacity=".42" stroke-width="1.5"/>'
+   +'<circle cx="50" cy="50" r="42" fill="none" stroke="'+col+'" stroke-opacity=".16" stroke-width=".8" stroke-dasharray="2 6" transform="rotate('+ring+' 50 50)"/>'
+   +'</svg>';
+}
+const GEN = [
+  {n:"الجيل الأول",y:"١٧٩٨ — ١٨٤٠",d:"الحملة الفرنسية ومحمد علي"},
+  {n:"الجيل الثاني",y:"١٨٤٠ — ١٨٩٠",d:"إسماعيل والثورة العرابية"},
+  {n:"الجيل الثالث",y:"١٨٩٠ — ١٩٣٠",d:"الاحتلال وثورة ١٩١٩"},
+  {n:"الجيل الرابع",y:"١٩٢٠ — ١٩٥٢",d:"ما بين الحربين"},
+  {n:"الجيل الخامس",y:"١٩٥٢ — ١٩٧٣",d:"يوليو والنكسة"},
+  {n:"الجيل السادس",y:"١٩٧٣ — ١٩٨٥",d:"الانفتاح والهجرة"}
 ];
-/* مصاهرات تصل بين الفروع */
-const MARRIAGES = [["aziz","nema"],["amr","radia"],["amer","effat"],["hamed","shakira"],["qasim","bahiga"],["salim","hadiya"],["nader","hanuma"]];
 
-/* ===== التخطيط ===== */
-const NW=158, NH=66, GX=14, RH=150, PAD=26;
-const byId=new Map(P.map(p=>[p.id,p]));
-const kids=new Map();
-P.forEach(p=>{ if(p.p){ if(!kids.has(p.p)) kids.set(p.p,[]); kids.get(p.p).push(p.id);} });
-const roots=P.filter(p=>!p.p).map(p=>p.id);
-const pos={};
-let cursor=PAD;
-function layout(id){
+const byId = new Map(P.map(p=>[p.id,p]));
+const kids = new Map();
+P.forEach(p=>{ if(p.p){ if(!kids.has(p.p)) kids.set(p.p,[]); kids.get(p.p).push(p.id); } });
+const roots = P.filter(p=>!p.p).map(p=>p.id);
+
+/* ---------- تخطيط ---------- */
+const NW=182, NH=50, GX=20, RH=182, PAD=34;
+const pos={}; let cur=PAD;
+function lay(id){
   const ch=kids.get(id)||[];
-  if(!ch.length){ const x=cursor; cursor+=NW+GX; pos[id]=x; return x; }
-  const xs=ch.map(layout);
-  const x=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/2;
-  pos[id]=x; return x;
+  if(!ch.length){ const x=cur; cur+=NW+GX; pos[id]=x; return x; }
+  const xs=ch.map(lay);
+  const x=(Math.min(...xs)+Math.max(...xs))/2; pos[id]=x; return x;
 }
-roots.forEach(function(r){ layout(r); cursor+=70; });
-const totalW=cursor+PAD, totalH=GENS.length*RH+40;
-const X=id=>totalW-pos[id]-NW;              /* مرآة لاتجاه القراءة من اليمين */
-const Y=id=>(byId.get(id).g-1)*RH+30;
+roots.forEach(r=>{ lay(r); cur+=90; });
+const W=cur+PAD, H=GEN.length*RH+50;
+const X=id=>W-pos[id]-NW, Y=id=>(byId.get(id).g-1)*RH+38;
+const CX=id=>X(id)+NW/2, CY=id=>Y(id)+NH/2;
 
-const stage=document.getElementById("stage");
-const svg=document.getElementById("svg");
-stage.style.width=totalW+"px";
-stage.style.height=totalH+"px";
-svg.setAttribute("viewBox","0 0 "+totalW+" "+totalH);
-svg.setAttribute("width",totalW); svg.setAttribute("height",totalH);
+const stage=document.getElementById('stage'), wires=document.getElementById('wires'),
+      sizer=document.getElementById('sizer'), scroll=document.getElementById('scroll');
+stage.style.width=W+'px'; stage.style.height=H+'px';
+wires.setAttribute('viewBox',`0 0 ${W} ${H}`); wires.setAttribute('width',W); wires.setAttribute('height',H);
 
-/* أشرطة الأجيال */
-GENS.forEach(function(label,i){
-  const b=document.createElement("div");
-  b.className="band";
-  b.style.top=(i*RH)+"px"; b.style.height=RH+"px";
-  const s=document.createElement("span");
-  s.className="band-label"; s.textContent=label;
-  b.appendChild(s); stage.insertBefore(b,svg);
+GEN.forEach((g,i)=>{
+  const b=document.createElement('div'); b.className='gen-band';
+  b.style.top=(i*RH)+'px'; b.style.height=RH+'px';
+  b.innerHTML='<span class="gen-name">'+g.n+' · '+g.d+'</span><span class="gen-year">'+g.y+'</span>';
+  stage.insertBefore(b,wires);
 });
 
-/* الوصلات */
-let paths="";
-P.forEach(function(p){
+/* ---------- الوصلات ---------- */
+const wireOf={}, marrOf=[];
+let svg='';
+P.forEach(p=>{
   if(!p.p) return;
-  const x1=X(p.p)+NW/2, y1=Y(p.p)+NH, x2=X(p.id)+NW/2, y2=Y(p.id);
-  const my=y1+(y2-y1)/2;
-  paths+='<path class="link" d="M'+x1+' '+y1+' V'+my+' H'+x2+' V'+y2+'"/>';
+  const x1=CX(p.p), y1=Y(p.p)+NH, x2=CX(p.id), y2=Y(p.id);
+  const dy=(y2-y1)*0.55;
+  svg+=`<path class="wire" id="w_${p.id}" d="M${x1} ${y1} C ${x1} ${y1+dy}, ${x2} ${y2-dy}, ${x2} ${y2}"/>`;
 });
-MARRIAGES.forEach(function(m){
-  if(!pos[m[0]]||!pos[m[1]]) return;
-  const a=byId.get(m[0]), b=byId.get(m[1]);
-  const x1=X(a.id)+NW/2, y1=Y(a.id)+NH/2, x2=X(b.id)+NW/2, y2=Y(b.id)+NH/2;
-  const mx=(x1+x2)/2, dip=Math.min(46,Math.abs(x2-x1)/4+18);
-  paths+='<path class="marr" d="M'+x1+' '+y1+' Q'+mx+' '+((y1+y2)/2+dip)+' '+x2+' '+y2+'"/>';
+MARR.forEach((m,i)=>{
+  if(pos[m[0]]===undefined||pos[m[1]]===undefined) return;
+  const x1=CX(m[0]), y1=CY(m[0]), x2=CX(m[1]), y2=CY(m[1]);
+  const dip=Math.min(70,Math.abs(x2-x1)/5+26);
+  svg+=`<path class="marry" id="m_${i}" d="M${x1} ${y1} Q ${(x1+x2)/2} ${(y1+y2)/2+dip} ${x2} ${y2}"/>`;
+  marrOf.push({i,a:m[0],b:m[1]});
 });
-svg.innerHTML=paths;
+svg+='<path class="trail" id="trail" d="" style="display:none"/>';
+wires.innerHTML=svg;
+P.forEach(p=>{ if(p.p) wireOf[p.id]=document.getElementById('w_'+p.id); });
+const trail=document.getElementById('trail');
 
-/* البطاقات */
-const cards=new Map();
-P.forEach(function(p){
-  const el=document.createElement("button");
-  el.className="card"; el.type="button";
-  el.style.width=NW+"px"; el.style.minHeight=NH+"px";
-  el.style.left=X(p.id)+"px";
-  el.style.top=Y(p.id)+"px";
-  el.style.setProperty("--l","var("+(LINES[p.l]?LINES[p.l].v:"--inlaw")+")");
-  el.innerHTML='<span class="nm"></span><span class="rl"></span>'+(p.sp?'<span class="sp"></span>':"")+(p.t?'<span class="tag"></span>':"");
-  el.querySelector(".nm").textContent=p.n;
-  el.querySelector(".rl").textContent=p.r||"";
-  if(p.sp) el.querySelector(".sp").textContent="⚭ "+p.sp;
-  if(p.t) el.querySelector(".tag").textContent=p.t;
-  el.addEventListener("click",function(){ open(p.id); });
-  stage.appendChild(el); cards.set(p.id,el);
+/* ---------- العُقد ---------- */
+const nodes=new Map();
+P.forEach(p=>{
+  const el=document.createElement('button');
+  el.type='button'; el.className='node';
+  el.style.cssText+=`left:${X(p.id)}px;top:${Y(p.id)}px;min-width:${NW}px;--c:${LINES[p.l].c}`;
+  el.innerHTML=medal(p,30)+'<span class="txt"><span class="nm"></span><span class="cast"></span></span>'
+    +(p.t?'<span class="flag" title="'+p.t+'"></span>':'');
+  el.querySelector('.nm').textContent=p.n;
+  const cs=el.querySelector('.cast');
+  if(ACT[p.id]){ const dot=document.createElement('span'); dot.className='dot';
+    const b=document.createElement('b'); b.textContent=ACT[p.id];
+    cs.appendChild(dot); cs.appendChild(b); }
+  else if(p.r){ cs.textContent=p.r; }
+  el.addEventListener('mouseenter',()=>{ if(!pathMode) lineage(p.id,true); });
+  el.addEventListener('mouseleave',()=>{ if(!pathMode && !selected) clearLit(); else if(!pathMode && selected) lineage(selected,true); });
+  el.addEventListener('click',()=>{ pathMode ? pick(p.id) : open(p.id); });
+  stage.appendChild(el); nodes.set(p.id,el);
 });
 
-/* اللوحة الجانبية */
-const panel=document.getElementById("panel");
+/* ظهور متدرّج جيلاً بعد جيل */
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+P.forEach((p,i)=>{
+  const delay = reduced ? 0 : (p.g-1)*140 + (i%9)*22;
+  setTimeout(()=>nodes.get(p.id).classList.add('in'), delay);
+});
+
+/* ---------- إضاءة النسب ---------- */
+function ancestors(id){ const out=[]; let c=byId.get(id); while(c && c.p){ out.push([c.id,c.p]); c=byId.get(c.p); } return out; }
+function descend(id,acc){ (kids.get(id)||[]).forEach(k=>{ acc.push([k,id]); descend(k,acc); }); return acc; }
+function clearLit(){
+  nodes.forEach(el=>el.classList.remove('lit','faded'));
+  Object.values(wireOf).forEach(w=>w&&w.classList.remove('lit','dimmed'));
+  document.querySelectorAll('.marry').forEach(m=>m.classList.remove('lit'));
+}
+function lineage(id,soft){
+  clearLit();
+  const edges=[...ancestors(id),...descend(id,[])];
+  const on=new Set([id]);
+  edges.forEach(([c])=>on.add(c)); edges.forEach(([,p])=>on.add(p));
+  MARR.forEach((m,i)=>{ if(m[0]===id||m[1]===id){ on.add(m[0]); on.add(m[1]);
+    const e=document.getElementById('m_'+i); if(e) e.classList.add('lit'); }});
+  nodes.forEach((el,k)=>{ if(on.has(k)) el.classList.add('lit'); else el.classList.add('faded'); });
+  Object.entries(wireOf).forEach(([k,w])=>{ if(!w) return; w.classList.add(on.has(k)&&on.has(byId.get(k).p)?'lit':'dimmed'); });
+}
+
+/* ---------- اللوحة ---------- */
+const dock=document.getElementById('dock');
 let selected=null;
-function childrenOf(id){ return (kids.get(id)||[]).map(function(c){return byId.get(c).n;}); }
-function open(id){
-  const p=byId.get(id);
-  selected=id;
-  cards.forEach(function(el,k){ el.classList.toggle("sel",k===id); });
-  document.getElementById("p-name").textContent=p.n;
-  document.getElementById("p-meta").textContent=
-    (LINES[p.l]?LINES[p.l].label:"أصهار")+" · "+GENS[p.g-1].split(" · ")[0]+(p.r?" · "+p.r:"");
-  document.getElementById("p-bio").textContent=p.bio||"";
-  const f=document.getElementById("p-facts"); f.innerHTML="";
-  function row(k,v,ref){
-    if(!v) return;
-    const d=document.createElement("div"); d.className="fact";
-    const dt=document.createElement("dt"); dt.textContent=k;
-    const dd=document.createElement("dd");
-    if(ref&&byId.has(ref)){ const a=document.createElement("a"); a.textContent=v; a.tabIndex=0;
-      a.addEventListener("click",function(){ open(ref); focusOn(ref); }); dd.appendChild(a); }
-    else dd.textContent=v;
-    d.appendChild(dt); d.appendChild(dd); f.appendChild(d);
-  }
-  row("الأب/الأم", p.p?byId.get(p.p).n:"—", p.p);
-  row("الزوج/الزوجة", p.sp||"—", p.spr);
-  const ch=childrenOf(id);
-  row("الأبناء", ch.length?ch.join(" · "):"—");
-  row("المسكن", p.wh);
-  panel.hidden=false;
-  if(isPhone()) requestAnimationFrame(function(){ focusOn(id); });
+function relRow(label,items){
+  if(!items.length) return '';
+  return '<div class="rel"><span class="rel-k">'+label+'</span>'+items.map(it=>
+    it.id ? '<button class="pill" data-go="'+it.id+'">'+it.t+'</button>'
+          : '<span class="pill ghost">'+it.t+'</span>').join('')+'</div>';
 }
-document.getElementById("close").addEventListener("click",function(){
-  panel.hidden=true; if(selected){ const el=cards.get(selected); if(el) el.classList.remove("sel"); } selected=null;
-});
+const AR=n=>String(n).replace(/[0-9]/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const steps_ar=n=> n===1?'خطوة واحدة': n===2?'خطوتان': n<=10?AR(n)+' خطوات': AR(n)+' خطوة';
+function open(id,quiet){
+  const p=byId.get(id); selected=id;
+  nodes.forEach(el=>el.classList.remove('sel'));
+  nodes.get(id).classList.add('sel');
+  if(!quiet) lineage(id);
+  document.getElementById('d-medal').innerHTML=medal(p,58);
+  document.getElementById('d-name').textContent=p.n;
+  const cr=document.getElementById('d-credit');
+  if(ACT[p.id]){
+    cr.innerHTML='<span class="k">قام بالدور</span>'
+      +'<a href="https://elcinema.com/work/1010927/cast/" target="_blank" rel="noopener"></a>'
+      +'<span class="k">مسلسل ٢٠٠١</span>';
+    cr.querySelector('a').textContent=ACT[p.id];
+    cr.hidden=false;
+  } else cr.hidden=true;
+  document.getElementById('d-meta').textContent=
+    LINES[p.l].n+' · '+GEN[p.g-1].n+' · '+GEN[p.g-1].y+(p.r?' · '+p.r:'')+(p.wh?' · '+p.wh:'');
+  document.getElementById('d-bio').textContent=p.bio||'';
+  const sibs=(p.p?(kids.get(p.p)||[]):[]).filter(s=>s!==id);
+  document.getElementById('d-rel').innerHTML =
+    relRow('الأب/الأم', p.p?[{id:p.p,t:byId.get(p.p).n}]:[]) +
+    relRow('الزوج', p.sp?[p.spr&&byId.has(p.spr)?{id:p.spr,t:byId.get(p.spr).n}:{t:p.sp}]:[]) +
+    relRow('الأبناء', (kids.get(id)||[]).map(k=>({id:k,t:byId.get(k).n}))) +
+    relRow('الإخوة', sibs.map(s=>({id:s,t:byId.get(s).n}))) +
+    (p.t?relRow('النهاية',[{t:p.t}]):'');
+  dock.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{ open(b.dataset.go); center(b.dataset.go); }));
+  dock.hidden=false;
+  document.getElementById('pathBox').hidden = !(pathMode && pathPick.length);
+  if(isPhone() && !quiet) requestAnimationFrame(()=>center(id));
+}
+document.getElementById('close').addEventListener('click',()=>{ dock.hidden=true; selected=null; clearLit();
+  nodes.forEach(el=>el.classList.remove('sel')); });
+document.getElementById('lineBtn').addEventListener('click',()=>{ if(selected){ lineage(selected); center(selected);} });
 
-/* تمركز على بطاقة */
-const canvas=document.getElementById("canvas");
+/* ---------- تكبير وتمركز ---------- */
 let zoom=1;
-const sizer=document.getElementById("sizer");
-const mqPhone=matchMedia("(max-width:899px)");
-const isPhone=function(){ return mqPhone.matches; };
-const PANEL_VH=0.46;   /* مطابق لـ max-height في CSS */
-const vpH=function(){ return window.visualViewport?window.visualViewport.height:window.innerHeight; };
-function applyZoom(){
-  stage.style.transform="scale("+zoom+")";
-  sizer.style.width=(totalW*zoom)+"px";
-  /* خلو أسفل الشجرة على الموبايل حتى يمكن رفع أي بطاقة فوق اللوحة المنزلقة */
-  const slack=isPhone()?Math.round(vpH()*PANEL_VH):0;
-  sizer.style.height=(totalH*zoom+slack)+"px";
-}
-/* ارتفاع اللوحة: على الموبايل نملأ ما تبقّى من الشاشة */
-function fitHeight(){
-  if(!isPhone()){ canvas.style.height=""; return; }
-  const top=canvas.getBoundingClientRect().top, vh=vpH();
-  const minH=Math.min(300,Math.round(vh*0.45));
-  canvas.style.height=Math.max(minH,Math.round(vh-top-10))+"px";
-}
-function viewH(){
-  const r=canvas.getBoundingClientRect();
-  if(isPhone() && !panel.hidden){
-    return Math.max(140, Math.min(r.bottom, vpH()*(1-PANEL_VH)) - r.top);
-  }
-  return canvas.clientHeight;
-}
-function focusOn(id){
-  const el=cards.get(id); if(!el) return;
-  const cx=(X(id)+NW/2)*zoom, cy=(Y(id)+NH/2)*zoom;
-  canvas.scrollTo({left:cx-canvas.clientWidth/2,top:cy-viewH()/2,behavior:"smooth"});
-}
-function zoomAt(nz,clientX,clientY){
-  nz=Math.max(0.2,Math.min(1.7,nz));
-  const r=canvas.getBoundingClientRect();
-  const ox=(clientX==null?canvas.clientWidth/2:clientX-r.left);
-  const oy=(clientY==null?viewH()/2:clientY-r.top);
-  const px=canvas.scrollLeft+ox, py=canvas.scrollTop+oy, k=nz/zoom;
-  zoom=nz; applyZoom();
-  canvas.scrollLeft=px*k-ox; canvas.scrollTop=py*k-oy;
-}
-/* قرصة الإصبعين */
-var pinch=null;
-function dist2(t){ return Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY); }
-canvas.addEventListener("touchstart",function(e){
-  if(e.touches.length===2){ var t=[e.touches[0],e.touches[1]];
-    pinch={d:dist2(t),z:zoom}; }
-},{passive:true});
-canvas.addEventListener("touchmove",function(e){
-  if(pinch&&e.touches.length===2){ e.preventDefault();
-    var t=[e.touches[0],e.touches[1]];
-    zoomAt(pinch.z*dist2(t)/pinch.d,(t[0].clientX+t[1].clientX)/2,(t[0].clientY+t[1].clientY)/2); }
-},{passive:false});
-["touchend","touchcancel"].forEach(function(ev){ canvas.addEventListener(ev,function(){ pinch=null; },{passive:true}); });
+const mqPhone = matchMedia('(max-width:919px)');
+const isPhone = ()=> mqPhone.matches;
+const DOCK_VH=0.46;   /* مطابق لـ max-height في CSS */
+function applyZoom(){ stage.style.transform='scale('+zoom+')'; sizer.style.width=(W*zoom)+'px';
+  /* على الموبايل نترك خلوًا أسفل الشجرة بقدر البطاقة المنزلقة حتى يمكن رفع أي اسم فوقها */
+  const slack = isPhone() ? Math.round((window.visualViewport?window.visualViewport.height:window.innerHeight)*DOCK_VH) : 0;
+  sizer.style.height=(H*zoom+slack)+'px';
+  document.body.classList.toggle('far', zoom<0.55); }
 
-/* البحث */
-document.getElementById("q").addEventListener("input",function(e){
-  const v=e.target.value.trim();
-  let first=null;
-  cards.forEach(function(el,k){
+/* ارتفاع اللوحة: على الموبايل نملأ ما تبقّى من الشاشة بدل ارتفاع ثابت */
+function fitHeight(){
+  if(!isPhone()){ scroll.style.height=''; return; }
+  const top = scroll.getBoundingClientRect().top;
+  const tl  = document.querySelector('.tl').getBoundingClientRect().height;
+  const vh  = (window.visualViewport ? window.visualViewport.height : window.innerHeight);
+  const minH= Math.min(300, Math.round(vh*0.45));
+  scroll.style.height = Math.max(minH, Math.round(vh - top - tl - 10)) + 'px';
+}
+
+/* المساحة المرئية فعلاً (اللوحة ناقص البطاقة المنزلقة على الموبايل) */
+function viewH(){
+  const sr=scroll.getBoundingClientRect();
+  if(isPhone() && !dock.hidden){
+    const vh=(window.visualViewport?window.visualViewport.height:window.innerHeight);
+    const dockTop=vh*(1-DOCK_VH);
+    return Math.max(140, Math.min(sr.bottom, dockTop) - sr.top);
+  }
+  return scroll.clientHeight;
+}
+function center(id,smooth){
+  const cx=CX(id)*zoom, cy=CY(id)*zoom;
+  scroll.scrollTo({left:cx-scroll.clientWidth/2, top:cy-viewH()/2, behavior:smooth===false?'auto':'smooth'});
+}
+/* تكبير حول نقطة ثابتة */
+function zoomAt(nz, clientX, clientY){
+  nz=Math.max(0.18,Math.min(1.6,nz));
+  const r=scroll.getBoundingClientRect();
+  const ox=(clientX==null? scroll.clientWidth/2 : clientX-r.left);
+  const oy=(clientY==null? viewH()/2 : clientY-r.top);
+  const px=scroll.scrollLeft+ox, py=scroll.scrollTop+oy, k=nz/zoom;
+  zoom=nz; applyZoom();
+  scroll.scrollLeft=px*k-ox; scroll.scrollTop=py*k-oy;
+}
+document.getElementById('zin').addEventListener('click',()=>zoomAt(zoom+0.12));
+document.getElementById('zout').addEventListener('click',()=>zoomAt(zoom-0.12));
+document.getElementById('zfit').addEventListener('click',()=>{ zoom=Math.max(0.18,Math.min(1,(scroll.clientWidth-10)/W)); applyZoom(); scroll.scrollLeft=scroll.scrollWidth; });
+
+/* قرصة الإصبعين للتكبير */
+let pinch=null;
+const dist=t=>Math.hypot(t[0].clientX-t[1].clientX, t[0].clientY-t[1].clientY);
+scroll.addEventListener('touchstart',e=>{
+  if(e.touches.length===2){ const t=[e.touches[0],e.touches[1]];
+    pinch={d:dist(t), z:zoom, x:(t[0].clientX+t[1].clientX)/2, y:(t[0].clientY+t[1].clientY)/2}; }
+},{passive:true});
+scroll.addEventListener('touchmove',e=>{
+  if(pinch && e.touches.length===2){ e.preventDefault();
+    const t=[e.touches[0],e.touches[1]];
+    zoomAt(pinch.z*dist(t)/pinch.d, (t[0].clientX+t[1].clientX)/2, (t[0].clientY+t[1].clientY)/2); }
+},{passive:false});
+['touchend','touchcancel'].forEach(ev=>scroll.addEventListener(ev,()=>{ if(pinch) pinch=null; },{passive:true}));
+
+/* ---------- البحث ---------- */
+document.getElementById('q').addEventListener('input',e=>{
+  const v=e.target.value.trim(); let first=null;
+  if(!v){ clearLit(); if(selected) lineage(selected); return; }
+  clearLit();
+  nodes.forEach((el,k)=>{
     const p=byId.get(k);
-    const hit=v&&(p.n.indexOf(v)>-1||(p.r&&p.r.indexOf(v)>-1)||(p.sp&&p.sp.indexOf(v)>-1));
-    el.classList.toggle("hit",!!hit);
-    el.classList.toggle("dim",!!v&&!hit);
+    const hit=p.n.includes(v)||(p.r&&p.r.includes(v))||(p.sp&&p.sp.includes(v))||(p.wh&&p.wh.includes(v))||(ACT[k]&&ACT[k].includes(v));
+    el.classList.toggle('lit',hit); el.classList.toggle('faded',!hit);
     if(hit&&!first) first=k;
   });
-  if(first) focusOn(first);
+  if(first) center(first);
 });
 
-/* مرشّح الفروع */
-const chips=document.getElementById("chips");
-let active=null;
-Object.keys(LINES).forEach(function(key){
-  const b=document.createElement("button");
-  b.className="chip"; b.type="button"; b.setAttribute("aria-pressed","false");
-  b.style.color="var("+LINES[key].v+")";
-  b.innerHTML='<span class="dot"></span>'+LINES[key].label;
-  b.addEventListener("click",function(){
-    active=(active===key)?null:key;
-    Array.prototype.forEach.call(chips.children,function(c){ c.setAttribute("aria-pressed","false"); });
-    if(active) b.setAttribute("aria-pressed","true");
-    cards.forEach(function(el,k){ el.classList.toggle("dim",!!active&&byId.get(k).l!==active); });
+/* ---------- تصفية الفروع ---------- */
+const chips=document.getElementById('chips'); let activeLine=null;
+Object.entries(LINES).forEach(([k,v])=>{
+  const b=document.createElement('button');
+  b.className='chip'; b.type='button'; b.setAttribute('aria-pressed','false');
+  b.style.setProperty('--c',v.c);
+  b.innerHTML='<i></i>'+v.n;
+  b.addEventListener('click',()=>{
+    activeLine = activeLine===k ? null : k;
+    [...chips.children].forEach(c=>c.setAttribute('aria-pressed','false'));
+    if(activeLine) b.setAttribute('aria-pressed','true');
+    clearLit();
+    nodes.forEach((el,id)=>{ if(activeLine) el.classList.toggle('faded', byId.get(id).l!==activeLine); });
   });
   chips.appendChild(b);
 });
 
-/* التكبير */
-document.getElementById("zin").addEventListener("click",function(){ zoomAt(zoom+0.15); });
-document.getElementById("zout").addEventListener("click",function(){ zoomAt(zoom-0.12); });
-document.getElementById("zfit").addEventListener("click",function(){
-  zoom=Math.max(0.2,Math.min(1,(canvas.clientWidth-8)/totalW)); applyZoom();
-  canvas.scrollLeft=canvas.scrollWidth;
+/* ---------- كشف الأجيال ---------- */
+const era=document.getElementById('era'), eraName=document.getElementById('eraName');
+era.addEventListener('input',()=>{
+  const v=+era.value;
+  eraName.textContent = v===6 ? 'كل الأجيال · ١٧٩٨ — ١٩٨٥' : GEN[v-1].n+' · '+GEN[v-1].y+' · '+GEN[v-1].d;
+  nodes.forEach((el,id)=>el.classList.toggle('hidden-gen', byId.get(id).g>v));
+  document.querySelectorAll('.wire').forEach(w=>{ const id=w.id.slice(2); w.style.opacity = byId.get(id).g>v ? .12 : 1; });
 });
+
+/* ---------- مسار القرابة ---------- */
+const adj=new Map();
+function link(a,b,t){ if(!adj.has(a)) adj.set(a,[]); adj.get(a).push([b,t]); }
+P.forEach(p=>{ if(p.p){ link(p.p,p.id,'أنجبَ'); link(p.id,p.p,'من أبناء'); } if(p.spr&&byId.has(p.spr)){ link(p.id,p.spr,'تزوّج'); link(p.spr,p.id,'تزوّج'); } });
+MARR.forEach(([a,b])=>{ link(a,b,'تزوّج'); link(b,a,'تزوّج'); });
+
+let pathMode=false, pathPick=[];
+const pathBtn=document.getElementById('pathBtn'), pathBox=document.getElementById('pathBox');
+pathBtn.addEventListener('click',()=>{
+  pathMode=!pathMode; pathBtn.setAttribute('aria-pressed',pathMode);
+  pathPick=[]; trail.style.display='none'; clearLit();
+  nodes.forEach(el=>el.classList.remove('pick'));
+  if(pathMode){ dock.hidden=false;
+    document.getElementById('d-name').textContent='مسار القرابة';
+    document.getElementById('d-meta').textContent='اختر اسمين من الكوكبة';
+    document.getElementById('d-bio').textContent='اضغط أي شخصيتين وستُرسم بينهما أقصر سلسلة قرابة كما وردت في الرواية.';
+    document.getElementById('d-rel').innerHTML=''; pathBox.hidden=true;
+  }
+});
+document.getElementById('pickBtn').addEventListener('click',()=>{
+  if(!selected) return;
+  if(!pathMode){ pathMode=true; pathBtn.setAttribute('aria-pressed',true); pathPick=[]; }
+  pick(selected);
+});
+function pick(id){
+  if(pathPick.includes(id)) return;
+  pathPick.push(id); nodes.get(id).classList.add('pick');
+  if(pathPick.length===2){ drawPath(pathPick[0],pathPick[1]); }
+  else { dock.hidden=false; document.getElementById('d-name').textContent='مسار القرابة';
+    document.getElementById('d-meta').textContent='اخترتَ: '+byId.get(id).n;
+    document.getElementById('d-bio').textContent='اختر الاسم الثاني.'; pathBox.hidden=true; }
+}
+function bfs(a,b){
+  const prev=new Map([[a,null]]); const q=[a];
+  while(q.length){ const c=q.shift(); if(c===b) break;
+    (adj.get(c)||[]).forEach(([n,t])=>{ if(!prev.has(n)){ prev.set(n,[c,t]); q.push(n); } }); }
+  if(!prev.has(b)) return null;
+  const out=[]; let c=b;
+  while(prev.get(c)){ const [p,t]=prev.get(c); out.unshift({from:p,to:c,rel:t}); c=p; }
+  return out;
+}
+function drawPath(a,b){
+  const steps=bfs(a,b);
+  dock.hidden=false; pathBox.hidden=false;
+  document.getElementById('d-name').textContent='مسار القرابة';
+  document.getElementById('d-rel').innerHTML='';
+  if(!steps){ document.getElementById('d-meta').textContent='لا يوجد اتصال'; 
+    document.getElementById('d-bio').textContent='الرواية لا تصل بين هذين الاسمين بنسب أو مصاهرة.'; 
+    pathBox.innerHTML=''; resetPick(); return; }
+  document.getElementById('d-meta').textContent='درجة القرابة: '+steps_ar(steps.length);
+  document.getElementById('d-bio').textContent='';
+  let html='<div class="path-line"><span class="nmx">'+byId.get(a).n+'</span>';
+  steps.forEach(s=>{ html+='<span class="lnk">‹ '+s.rel+' ›</span><span class="nmx">'+byId.get(s.to).n+'</span>'; });
+  html+='</div><p class="hint" style="margin:9px 0 0">اضغط «مسار القرابة» من جديد لاختيار اسمين آخرين.</p>';
+  pathBox.innerHTML=html;
+  clearLit();
+  const on=new Set([a]); steps.forEach(s=>on.add(s.to));
+  nodes.forEach((el,k)=>{ el.classList.toggle('faded',!on.has(k)); el.classList.toggle('lit',on.has(k)); });
+  let d='M'+CX(a)+' '+CY(a);
+  steps.forEach(s=>{ const x1=CX(s.from),y1=CY(s.from),x2=CX(s.to),y2=CY(s.to);
+    d+=` C ${x1} ${(y1+y2)/2}, ${x2} ${(y1+y2)/2}, ${x2} ${y2}`; });
+  trail.setAttribute('d',d); trail.style.display='';
+  center(a);
+  resetPick();
+}
+function resetPick(){ pathPick=[]; nodes.forEach(el=>el.classList.remove('pick')); }
+
+/* ---------- البداية ---------- */
 fitHeight();
-zoom=isPhone()?0.52:((canvas.clientWidth<700)?0.62:0.82);
-applyZoom();
-requestAnimationFrame(function(){
-  if(!isPhone()) open("amr");
-  const cx=(X("amr")+NW/2)*zoom, cy=(Y("amr")+NH/2)*zoom;
-  canvas.scrollLeft=Math.max(0,cx-canvas.clientWidth*0.62);
-  canvas.scrollTop=Math.max(0,cy-viewH()*0.42);
+zoom = isPhone() ? 0.5 : (scroll.clientWidth<760 ? 0.6 : 0.82); applyZoom();
+requestAnimationFrame(()=>{
+  const start='amr';
+  center(start,false);
+  if(!isPhone()) open(start,true);
+  setTimeout(()=>center(start,true), 60);
 });
-var rsT; function onResize(){ clearTimeout(rsT); rsT=setTimeout(function(){ fitHeight(); applyZoom();
-  if(selected) focusOn(selected); },120); }
-addEventListener("resize",onResize); addEventListener("orientationchange",onResize);
-if(window.visualViewport) visualViewport.addEventListener("resize",onResize);
-mqPhone.addEventListener("change",function(){ fitHeight(); zoom=isPhone()?0.52:0.82; applyZoom();
-  if(selected) focusOn(selected); });
+let rt; function onResize(){ clearTimeout(rt); rt=setTimeout(()=>{ fitHeight(); applyZoom();
+  if(selected) center(selected,false); }, 120); }
+addEventListener('resize',onResize); addEventListener('orientationchange',onResize);
+if(window.visualViewport) visualViewport.addEventListener('resize',onResize);
+mqPhone.addEventListener('change',()=>{ fitHeight();
+  zoom = isPhone()?0.5:0.82; applyZoom(); if(selected) center(selected,false); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ dock.hidden=true; clearLit(); resetPick();
+  trail.style.display='none'; nodes.forEach(el=>el.classList.remove('sel')); selected=null; } });
 </script>
 
 </body>
